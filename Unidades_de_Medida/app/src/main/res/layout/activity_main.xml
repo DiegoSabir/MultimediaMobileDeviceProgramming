@@ -11,8 +11,8 @@
         android:text="BOTON 1" />
 
     <Button
-        android:layout_width="120px"
-        android:layout_height="60px"
+        android:layout_width="@dimen/ancho_btn"
+        android:layout_height="@dimen/alto_btn"
         android:text="BOTON 2" />
 
     <Button
