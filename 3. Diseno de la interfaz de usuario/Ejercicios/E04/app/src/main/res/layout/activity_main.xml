@@ -2,7 +2,9 @@
 <TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:gravity="center">
     <!--
         Estirar las columnas 0 y 2
         android:stretchColumns="0,2">
@@ -15,7 +17,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Utilizas Internet Explorer?"
-            android:layout_span="3"/>
+            android:layout_span="3"
+            android:padding="15dp"
+            android:textSize="20sp"
+            android:layout_gravity="center"/>
             <!--
                 Estirar el boton hasta la 3
                 android:layout_span="3"
@@ -29,17 +34,20 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Si"/>
+            android:text="Si"
+            android:layout_margin="3dp"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No"/>
+            android:text="No"
+            android:layout_margin="3dp"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="A veces"/>
+            android:text="A veces"
+            android:layout_margin="3dp"/>
     </TableRow>
 
 </TableLayout>
