@@ -9,23 +9,24 @@
     android:orientation="horizontal">
 
     <Button
-        android:text="Botón 1"
+        android:text="Boton 1"
         android:layout_column="0"/>
 
     <Button
-        android:text="Botón 2"
+        android:text="Boton 2"
         android:layout_column="2"/>
 
     <Button
+        android:layout_height="25dp"
         android:layout_columnSpan="3"
         android:layout_gravity="fill"/>
 
     <Button
-        android:text="Botón 3"
+        android:text="Boton 3"
         android:layout_column="0"/>
 
     <Button
-        android:text="Botón 4"
+        android:text="Boton 4"
         android:layout_column="2"/>
 
 </GridLayout>
