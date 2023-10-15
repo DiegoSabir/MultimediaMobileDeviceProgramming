@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Recursos</string>
+    <string name="title">¡Hola Mundo!</string>
+    <string name="option1">Boton 1</string>
+    <string name="option2">Boton 2</string>
+    <string name="option3">Boton 3</string>
+    <string name="option4">Boton 4</string>
+    <string name="option5">Boton 5</string>
+    <string name="option6">Boton 6</string>
 </resources>

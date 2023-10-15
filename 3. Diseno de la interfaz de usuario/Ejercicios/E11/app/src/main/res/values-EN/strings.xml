@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Recursos</string>
+    <string name="title">Hello World!</string>
+    <string name="option1">Bottom 1</string>
+    <string name="option2">Bottom 2</string>
+    <string name="option3">Bottom 3</string>
+    <string name="option4">Bottom 4</string>
+    <string name="option5">Bottom 5</string>
+    <string name="option6">Bottom 6</string>
+</resources>
