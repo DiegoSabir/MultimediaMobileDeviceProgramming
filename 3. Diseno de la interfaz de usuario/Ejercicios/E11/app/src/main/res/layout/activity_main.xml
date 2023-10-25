@@ -8,6 +8,7 @@
     android:background="@color/cyan">
 
     <TextView
+        android:id="@+id/txt_saludo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title"
@@ -15,31 +16,37 @@
         android:padding="@dimen/buttonMargin"/>
 
     <Button
+        android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/option1"/>
 
     <Button
+        android:id="@+id/btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/option2"/>
 
     <Button
+        android:id="@+id/btn3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/option3"/>
 
     <Button
+        android:id="@+id/btn4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/option4"/>
 
     <Button
+        android:id="@+id/btn5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/option5"/>
 
     <Button
+        android:id="@+id/btn6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/option6"/>
