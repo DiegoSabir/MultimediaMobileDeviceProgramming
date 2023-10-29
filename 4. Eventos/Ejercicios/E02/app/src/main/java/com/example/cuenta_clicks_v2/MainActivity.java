@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnPulsar.setOnClickListener(this);
         btnFinalizar.setOnClickListener(this);
-
     }
 
     @Override

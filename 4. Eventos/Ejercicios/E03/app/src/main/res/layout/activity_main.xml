@@ -10,5 +10,6 @@
         android:id="@+id/tvMensaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Haz click y te saludo" />
+        android:text="Haz click y te saludo!!!" />
+
 </LinearLayout>
