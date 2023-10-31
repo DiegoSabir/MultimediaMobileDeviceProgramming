@@ -15,7 +15,9 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton btnTexto;
     private RadioButton btnImagen;
     private Button btnAceptar;
-    private ImageView imageView;
+    private TextView tvGirando;
+    private ImageView imgEmoticono;
+    float angulo = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,26 +29,37 @@ public class MainActivity extends AppCompatActivity {
         btnTexto = findViewById(R.id.btnTexto);
         btnImagen = findViewById(R.id.btnImagen);
         btnAceptar = findViewById(R.id.btnAceptar);
+        imgEmoticono = findViewById(R.id.imgEmoticono);
+        tvGirando = findViewById(R.id.tvGirando);
 
-        // Establece un Listener para el botón Aceptar
         btnAceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int selectedId = radioGroup.getCheckedRadioButtonId();
+                tvMensaje.setVisibility(View.GONE);
+                radioGroup.setVisibility(View.GONE);
+                btnAceptar.setVisibility(View.GONE);
 
                 if (selectedId == btnTexto.getId()) {
-
-                    tvMensaje.setText("GIRANDO!!!!!");
-                    tvMensaje.setTextSize(30);
-                    tvMensaje.setTextColor(getResources().getColor(R.color.red));
-                    tvMensaje.setRotation(45);
+                    tvGirando.setVisibility(View.VISIBLE);
+                    tvGirando.setOnClickListener(new View.OnClickListener(){
+                        @Override
+                        public void onClick(View v){
+                            angulo += 45;
+                            tvGirando.setRotation(angulo);
+                        }
+                    });
                 }
                 else if (selectedId == btnImagen.getId()) {
-                // Si se selecciona la opción de imagen, muestra una imagen (debes tener una imagen con el ID imageView en tu layout XML)
-                tvMensaje.setVisibility(View.GONE);
-                imageView.setVisibility(View.VISIBLE);
-            }
-
+                    imgEmoticono.setVisibility(View.VISIBLE);
+                    imgEmoticono.setOnClickListener(new View.OnClickListener(){
+                        @Override
+                        public void onClick(View v){
+                            angulo += 45;
+                            imgEmoticono.setRotation(angulo);
+                        }
+                    });
+                }
             }
         });
     }

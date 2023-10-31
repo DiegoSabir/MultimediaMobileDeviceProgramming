@@ -17,20 +17,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
         <RadioButton
             android:id="@+id/btnTexto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Texto"
             android:checked="true" />
-
         <RadioButton
             android:id="@+id/btnImagen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Imagen" />
-
     </RadioGroup>
 
     <Button
@@ -39,4 +36,19 @@
         android:layout_height="wrap_content"
         android:text="Aceptar" />
 
+    <TextView
+        android:id="@+id/tvGirando"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GIRANDO!!!!!!"
+        android:textSize="50sp"
+        android:textColor="@color/red"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/imgEmoticono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/emoticono"
+        android:visibility="gone"/>
 </LinearLayout>
