@@ -15,4 +15,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:layout_width=""
+        android:layout_height=""
+        />
+
+    <Button
+        android:layout_width=""
+        android:layout_height=""
+    />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
