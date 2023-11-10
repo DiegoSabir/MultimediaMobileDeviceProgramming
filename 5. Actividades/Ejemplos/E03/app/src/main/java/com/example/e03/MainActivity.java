@@ -1,10 +1,11 @@
-package com.example.e02;
+package com.example.e03;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+
 
     public void onClickCambioAcitivity(View view) {
         if (view.getId() == R.id.btnLlamadaActividad2){
@@ -46,13 +48,15 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtras(bundle);
             startActivity(intent);
         }
-        else if (view.getId() == R.id.btnLlamadaOtraApp) {
-            Intent intent = new Intent();
-            intent.setClassName("com.example.eligegiro",
-                    "com.example.eligegiro.MainActivity");
-            startActivity(intent);
+        else if (view.getId() == R.id.btnLlamadaEsperandoRespuesta) {
+            Intent intent = new Intent(this, Activity5.class);
+            //llamada esperando respuesta
+            startActivityForResult(intent, CODIGO_LLAMADA_ACT5);
+
         }
     }
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -71,5 +75,53 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Algo fallo", Toast.LENGTH_SHORT).show();
             }
         }
+    }
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Log.i("ciclo", "Ejecutando onCreate Actividad 3");
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i("ciclo", "Ejecutando onStart Actividad 3");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("ciclo", "Ejecutando onStop Actividad 3");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("ciclo", "Ejecutando onResume Actividad 3");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i("ciclo", "Ejecutando onRestart Actividad 3");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.i("ciclo", "Ejecutando onPause Actividad 3");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("ciclo", "Ejecutando onDestroy Actividad 3");
+    }
+
+    public void onClickFinalizar(View view){
+        finish();
     }
 }

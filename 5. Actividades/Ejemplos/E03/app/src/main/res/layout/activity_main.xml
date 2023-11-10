@@ -41,17 +41,17 @@
 
     <!-- llamar a Activity esperando respuesta -->
     <Button
-        android:id="@+id/btnLlamadaOtraApp"
+        android:id="@+id/btnLlamadaEsperandoRespuesta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Llamada a otra App"
+        android:text="Llamada esperando respuesta"
         android:onClick="onClickCambioAcitivity"/>
 
     <TextView
         android:id="@+id/tvRespuesta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="XXXXXXXXXX"
+        android:text="XXXXXXXXXXXXXXXXX"
         android:textSize="22dp" />
 
 </LinearLayout>
