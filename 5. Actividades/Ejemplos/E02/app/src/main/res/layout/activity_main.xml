@@ -41,10 +41,10 @@
 
     <!-- llamar a Activity esperando respuesta -->
     <Button
-        android:id="@+id/btnLlamadaOtraApp"
+        android:id="@+id/btnLlamadaCalculadora"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Llamada a otra App"
+        android:text="Llamada a calculadora"
         android:onClick="onClickCambioAcitivity"/>
 
     <TextView

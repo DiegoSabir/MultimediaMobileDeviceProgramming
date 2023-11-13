@@ -4,10 +4,13 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private String datoAEnviar;
@@ -46,11 +49,20 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtras(bundle);
             startActivity(intent);
         }
-        else if (view.getId() == R.id.btnLlamadaOtraApp) {
+        else if (view.getId() == R.id.btnLlamadaCalculadora) {
             Intent intent = new Intent();
             intent.setClassName("com.example.eligegiro",
                     "com.example.eligegiro.MainActivity");
-            startActivity(intent);
+
+            PackageManger pm = getPackageManager();
+            List actividadesPosibles = pm.queryIntentActivities(intent, PackageManager.MATCH);
+            if (actividadesPosibles.size() > 0){
+                startActivity(intent);
+            }
+            else{
+                Toast.makeText(MainActivity.this, "Ninguna actividad puede realizar")
+            }
+
         }
     }
 
