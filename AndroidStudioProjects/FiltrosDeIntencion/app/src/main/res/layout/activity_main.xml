@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:padding="20dp"
+        android:text="Estamos intentfile"/>
+    <EditText
+        android:id="@+id/textoUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Introduce url"
+        android:layout_margin="20dp"/>
+    <Button
+        android:id="@+id/btnexplicito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cargar url explicito"
+        android:onClick="onclickBtn"
+        android:layout_marginBottom="20dp"/>
+    <Button
+        android:id="@+id/btnimplicito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cargar url implicito"
+        android:onClick="onclickBtn"/>
+
+</LinearLayout>

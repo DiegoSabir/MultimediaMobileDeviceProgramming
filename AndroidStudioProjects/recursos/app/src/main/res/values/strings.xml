@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">recursos</string>
+    <string name="boton_8">Boton 8</string>
+    <string name="boton_10">Boton 10</string>
+    <string name="boton_9">Boton 9</string>
+    <string name="boton_7">Boton 7</string>
+    <string name="boton_6">Boton 6</string>
+    <string name="boton_5">Boton 5</string>
+    <string name="boton_4">Boton 4</string>
+    <string name="boton_3">Boton 3</string>
+    <string name="boton_2">Boton 2</string>
+    <string name="boton_1">Boton 1</string>
+    <string name="cum_de_abulo">cum de abulo</string>
+</resources>
