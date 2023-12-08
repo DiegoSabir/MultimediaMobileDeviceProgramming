@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">DosViewsPorCodigo</string>
-    <string name="texto_etiqueta">TextView desde código</string>
-    <string name="texto_boton">Botón desde código</string>
-</resources>

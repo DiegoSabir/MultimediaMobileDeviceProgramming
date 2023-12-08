@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="textSize">30sp</dimen>
-    <dimen name="buttonMargin">16dp</dimen>
-    <dimen name="textSize_xhdpi">50sp</dimen>
-    <dimen name="buttonMargin_xhdpi">30dp</dimen>
-</resources>

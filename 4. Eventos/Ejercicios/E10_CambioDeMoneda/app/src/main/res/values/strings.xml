@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CambioDeMoneda</string>
+    <string name="tvTitulo">CAMBIO DE MONEDA</string>
+    <string name="rbToEur">Pts. a Euros</string>
+    <string name="rbToPts">Euros a Pts.</string>
+    <string name="tvCantidad">Introduce valor</string>
+    <string name="etCantidad">Valor</string>
+    <string name="btnCambiar">Cambiar</string>
+</resources>

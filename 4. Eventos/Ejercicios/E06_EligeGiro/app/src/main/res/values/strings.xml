@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EligeGiro</string>
+    <string name="tvMensaje">¿Giramos?</string>
+    <string name="rbTexto">Texto</string>
+    <string name="rbImagen">Imagen</string>
+    <string name="btnAceptar">Aceptar</string>
+    <string name="tvTexto">GIRANDO!!!!!</string>
+</resources>

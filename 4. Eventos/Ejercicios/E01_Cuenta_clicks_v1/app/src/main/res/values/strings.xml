@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Cuenta_clicks_v1</string>
+    <string name="tvTitulo">Voy a contar tus clicks</string>
+    <string name="btnPulsar">Pulsa</string>
+</resources>
