@@ -3,7 +3,7 @@
     <string name="btnSaludar">Saludar</string>
     <string name="etNacimiento">Año de nacimiento</string>
     <string name="etNombre">Nombre</string>
+    <string name="tvElegir">Elige despedida</string>
     <string name="rbAdios">Adios</string>
     <string name="rbHastaPronto">Hasta pronto</string>
-    <string name="tvElegir">Elige despedida</string>
 </resources>
