@@ -24,9 +24,11 @@
             android:text="@string/tvMensaje1"/>
 
         <Button
+            android:id="@+id/btnCalculadora"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btnCalculadora"/>
+            android:text="@string/btnCalculadora"
+            android:onClick="onClickBtn"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -34,9 +36,11 @@
             android:text="@string/tvMensaje2"/>
 
         <Button
+            android:id="@+id/btnAjustes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btnAjustes"/>
+            android:text="@string/btnAjustes"
+            android:onClick="onClickBtn"/>
 
     </LinearLayout>
 

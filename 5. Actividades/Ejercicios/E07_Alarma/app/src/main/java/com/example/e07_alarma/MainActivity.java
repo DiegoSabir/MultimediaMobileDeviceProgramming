@@ -18,16 +18,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickBtn(View view){
         String mensaje = "Esto es el aviso actual de mi alarma";
-        int hora = 10;
-        int minutos = 16;
+        int hora = 16;
+        int minutos = 50;
+
         Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM);
         intent.putExtra(AlarmClock.EXTRA_MESSAGE, mensaje);
         intent.putExtra(AlarmClock.EXTRA_HOUR, hora);
         intent.putExtra(AlarmClock.EXTRA_MINUTES, minutos);
+
         if (intent.resolveActivity(getPackageManager()) != null){
             startActivity(intent);
         }
-        else{
+        else {
             Toast.makeText(this, "No se puede realizar esta accion", Toast.LENGTH_SHORT);
         }
     }
