@@ -60,6 +60,13 @@
             android:text="@string/btnMapa"
             android:onClick="onClickBtn"/>
 
+        <Button
+            android:id="@+id/btnOtraApp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btnOtraApp"
+            android:onClick="onClickBtn"/>
+
     </LinearLayout>
 
 </LinearLayout>

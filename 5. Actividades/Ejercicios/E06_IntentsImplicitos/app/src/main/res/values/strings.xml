@@ -6,4 +6,5 @@
     <string name="btnMarcar">MARCAR NUMERO</string>
     <string name="btnAbrir">ABRIR NAVEGADOR</string>
     <string name="btnMapa">ABRIR MAPA</string>
+    <string name="btnOtraApp">ABRIR LA APP CUENTACLICK</string>
 </resources>

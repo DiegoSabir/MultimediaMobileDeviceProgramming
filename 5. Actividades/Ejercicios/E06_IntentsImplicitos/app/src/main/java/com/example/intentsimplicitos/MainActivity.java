@@ -13,6 +13,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     //cte identificadora de la llamada de teléfono
@@ -69,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
-
         else if (viewId == R.id.btnMapa) {
             intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:42.25,-8.68"));
             intent.setPackage("com.google.android.apss.map");
@@ -80,7 +81,18 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Esta acción no se puede realizar", Toast.LENGTH_SHORT).show();
             }
         }
-
+        else if (viewId == R.id.btnOtraApp) {
+            intent = new Intent();
+            intent.setClassName("com.example.cuenta_clicks_v2", "com.example.cuenta_clicks_v2.MainActivity");
+            PackageManager pm = getPackageManager();
+            List actividadesPosibles = pm.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+            if (actividadesPosibles.size()>0){
+                startActivity(intent);
+            }
+            else {
+                Toast.makeText(this, "Esta acción no se puede realizar", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     //Metodo en donde recibimos la respuesta que ha dado el usuario
