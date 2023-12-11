@@ -11,8 +11,6 @@ import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import java.util.Calendar;
-
 public class ActivityRespuesta extends AppCompatActivity {
     private TextView tvMensaje, tvElegir;
     private Button btnFinalizar;
@@ -34,9 +32,7 @@ public class ActivityRespuesta extends AppCompatActivity {
 
         btnFinalizar = findViewById(R.id.btnFinalizar);
 
-
-        Intent intent = getIntent();
-        String saludo = intent.getStringExtra("saludo");
+        String saludo = getIntent().getStringExtra("saludo");
         tvMensaje.setText(saludo);
 
         listeners();

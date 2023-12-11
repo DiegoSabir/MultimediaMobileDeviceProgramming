@@ -32,11 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
         tvDespedida = findViewById(R.id.tvDespedida);
 
-        Intent intent = getIntent();
-        String despedida = intent.getStringExtra("despedida");
-        if (despedida != null) {
-            tvDespedida.setText(despedida);
-        }
+        String despedida = getIntent().getStringExtra("despedida");
+        tvDespedida.setText(despedida);
     }
 
     public void saludar(View v){
@@ -59,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 saludo += "Eres menor de edad";
             }
 
+            //Moverse a la Activity ActivityRespuesta
             Intent intent = new Intent(this, ActivityRespuesta.class);
             intent.putExtra("saludo", saludo);
             startActivity(intent);

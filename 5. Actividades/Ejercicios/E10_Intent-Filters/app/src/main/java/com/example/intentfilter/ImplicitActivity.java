@@ -15,7 +15,10 @@ public class ImplicitActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_implicit);
 
+
         webView=findViewById(R.id.webviewImplicita);
+
+
         Intent intent = getIntent();
         Uri uriRecibida = intent.getData();
         webView.loadUrl(uriRecibida.toString());

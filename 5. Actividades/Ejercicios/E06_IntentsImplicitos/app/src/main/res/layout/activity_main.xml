@@ -40,10 +40,24 @@
             android:onClick="onClickBtn"/>
 
         <Button
+            android:id="@+id/btnLlamarCompat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btnLlamarCompat"
+            android:onClick="onClickBtn"/>
+
+        <Button
             android:id="@+id/btnMarcar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/btnMarcar"
+            android:onClick="onClickBtn"/>
+
+        <Button
+            android:id="@+id/btnSMS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btnSMS"
             android:onClick="onClickBtn"/>
 
         <Button

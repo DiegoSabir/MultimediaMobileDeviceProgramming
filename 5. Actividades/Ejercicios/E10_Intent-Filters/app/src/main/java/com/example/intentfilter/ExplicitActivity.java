@@ -13,7 +13,11 @@ public class ExplicitActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_explicit);
+
+
         webView=findViewById(R.id.webviewExplicita);
+
+
         Intent intent = getIntent();
         String urlRecibida = intent.getExtras().getString("url_key");
         webView.loadUrl(urlRecibida);

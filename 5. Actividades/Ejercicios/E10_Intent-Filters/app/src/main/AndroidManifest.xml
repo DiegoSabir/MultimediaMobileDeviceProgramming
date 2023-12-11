@@ -30,11 +30,17 @@
             android:name=".ImplicitActivity"
             android:exported="true">
             <intent-filter>
+                <!-- puede manejar intenciones que incluyan la acción android.intent.action.VIEW -->
                 <action android:name="android.intent.action.VIEW"/>
+
+                <!--  para manejar intenciones por defecto. -->
                 <category android:name="android.intent.category.DEFAULT"/>
+                <!-- puede ser lanzada desde un navegador web o desde una aplicación que soporte la navegación por URL. -->
                 <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="http"/>
-                <data android:scheme="https"/>
+
+                <!-- data: especifica los tipos de datos que esta actividad puede manejar -->
+                <data android:scheme="http"/>  <!-- puede manejar los esquemas http -->
+                <data android:scheme="https"/> <!-- puede manejar los esquemas https -->
             </intent-filter>
         </activity>
 
