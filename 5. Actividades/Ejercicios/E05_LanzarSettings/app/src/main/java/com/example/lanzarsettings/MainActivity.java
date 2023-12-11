@@ -2,11 +2,7 @@ package com.example.lanzarsettings;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.Manifest;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
@@ -27,14 +23,14 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent();
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
-                // Intent for most calculators
+                // Intent para la mayoria de calculadoras
                 intent.setClassName("com.android.calculator2", "com.android.calculator2.Calculator");
 
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     startActivity(intent);
                 }
                 else {
-                    // Intent for some Samsung devices
+                    // Intent para algunos dispositivos Samsung
                     intent.setClassName("com.sec.android.app.popupcalculator", "com.sec.android.app.popupcalculator.Calculator");
                     if (intent.resolveActivity(getPackageManager()) != null) {
                         startActivity(intent);

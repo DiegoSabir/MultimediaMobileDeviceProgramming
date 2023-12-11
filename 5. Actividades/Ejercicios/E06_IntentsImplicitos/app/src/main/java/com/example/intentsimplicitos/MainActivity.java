@@ -30,13 +30,13 @@ public class MainActivity extends AppCompatActivity {
         int viewId = view.getId();
 
         if (viewId == R.id.btnMostrar) {
-            //genera la acción del intent implicito: ACTION_VIEW
+            //Genera la acción del intent implicito: ACTION_VIEW
             intent = new Intent(Intent.ACTION_VIEW, Uri.parse("content://contacts/people/"));
             startActivity(intent);
         }
 
         else if (viewId == R.id.btnLlamar) {
-            //genera la acción del intent implicito: ACTION_CALL
+            //Genera la acción del intent implicito: ACTION_CALL
             if (Build.VERSION.SDK_INT >= 23) {
                 if (checkSelfPermission(android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
                     intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:(+34)604053218"));
@@ -53,23 +53,23 @@ public class MainActivity extends AppCompatActivity {
         }
 
         else if (viewId == R.id.btnMarcar) {
-            /** genera la accion del intent implicito: ACTION_DIAL
+            /** Genera la accion del intent implicito: ACTION_DIAL
             intent = new Intent(Intent.ACTION_DIAL);
             startActivity(intent);
             */
 
-            //genera la acción del intent implicito: ACTION_DIAL con un numero premarcado
+            //Genera la acción del intent implicito: ACTION_DIAL con un numero premarcado
             intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:(+34)604053218"));
             startActivity(intent);
         }
 
         else if (viewId == R.id.btnAbrir) {
-            //genera la acción del intent implicito: ACTION_VIEW
+            //Genera la acción del intent implicito: ACTION_VIEW
             intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.es"));
             startActivity(intent);
         }
 
-        /** PARA GOOGLE MAPS
+
         else if (viewId == R.id.btnMapa) {
             intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:42.25,-8.68"));
             intent.setPackage("com.google.android.apss.map");
@@ -80,10 +80,10 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Esta acción no se puede realizar", Toast.LENGTH_SHORT).show();
             }
         }
-         */
+
     }
 
-    //metodo en donde recibimos la respuesta que ha dado el usuario
+    //Metodo en donde recibimos la respuesta que ha dado el usuario
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
@@ -91,13 +91,13 @@ public class MainActivity extends AppCompatActivity {
 
         if (requestCode == LLAMADA_TELEFONICA_DIRECTA) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                //acciones correspondientes al permiso concedido
+                //Respuesta cuando el permiso es concedido
                 Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:(+34)986430137"));
                 startActivity(intent);
                 Toast.makeText(this, "El usuario ha permitido el permiso de llamada", Toast.LENGTH_SHORT).show();
             }
             else {
-                //acciones correspondientes al permiso denegado
+                //Respuesta cuando el permiso es denegado
                 Toast.makeText(this, "El usuario ha denegado el permiso de llamada", Toast.LENGTH_SHORT).show();
             }
         }

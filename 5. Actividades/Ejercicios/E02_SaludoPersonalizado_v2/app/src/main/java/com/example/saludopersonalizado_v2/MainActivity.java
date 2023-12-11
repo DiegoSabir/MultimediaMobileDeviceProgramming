@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText etNombre, etNacimiento;
     private TextView tvMensaje;
     private RadioButton rbMasculino, rbFemenino;
+    private String nombreValue = "";
+    private String nacimientoValue = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,23 @@ public class MainActivity extends AppCompatActivity {
 
         rbMasculino = findViewById(R.id.rbMasculino);
         rbFemenino = findViewById(R.id.rbFemenino);
+
+        if (savedInstanceState != null) {
+            // Restaurar datos guardados
+            nombreValue = savedInstanceState.getString("nombreValue");
+            nacimientoValue = savedInstanceState.getString("nacimientoValue");
+
+            etNombre.setText(nombreValue);
+            etNacimiento.setText(nacimientoValue);
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        // Guardar los datos al girar la pantalla
+        outState.putString("nombreValue", etNombre.getText().toString());
+        outState.putString("nacimientoValue", etNacimiento.getText().toString());
     }
 
     public void saludar(View v){

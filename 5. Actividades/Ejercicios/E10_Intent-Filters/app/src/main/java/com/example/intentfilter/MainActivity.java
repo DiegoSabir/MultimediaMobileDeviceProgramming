@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickBtn(View view) {
-        if (view.getId()==R.id.btnExplicito){
+        if (view.getId() == R.id.btnExplicito){
             if(!etUrl.getText().toString().isEmpty()){
                 Intent intent = new Intent(this, ExplicitActivity.class);
                 intent.putExtra("url_key", etUrl.getText().toString());
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        else if (view.getId()==R.id.btnImplicito){
+        else if (view.getId() == R.id.btnImplicito){
             if(!etUrl.getText().toString().isEmpty()){
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(etUrl.getText().toString()));
                 startActivity(intent);

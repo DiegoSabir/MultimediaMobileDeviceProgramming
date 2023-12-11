@@ -13,6 +13,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private RadioButton rbToEur, rbToPts;
     private EditText etCantidad;
+    private String cantidadValue = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,17 @@ public class MainActivity extends AppCompatActivity {
         rbToPts = findViewById(R.id.rbToPts);
 
         etCantidad = findViewById(R.id.etCantidad);
+
+        if (savedInstanceState != null) {
+            cantidadValue = savedInstanceState.getString("cantidadValue");
+            etCantidad.setText(cantidadValue);
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("cantidadValue", etCantidad.getText().toString());
     }
 
     public void cambiar(View v) {
