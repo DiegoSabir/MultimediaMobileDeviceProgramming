@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:padding="22dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo"
+        android:textSize="25sp"
+        android:textColor="@color/white"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@color/pink"
+        android:padding="22dp">
+
+        <TextView
+            android:id="@+id/tvTitulo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IMC"
+            android:textColor="@color/background"
+            android:textSize="25sp"/>
+
+        <RadioGroup
+            android:id="@+id/rgOpcionesInformacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rbEnlace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wikipedia" />
+
+            <RadioButton
+                android:id="@+id/rbTelefono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OMS Madrid"/>
+
+        </RadioGroup>
+
+
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"/>
+
+        <Button
+            android:id="@+id/btnAtras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VOLVER ATRAS"/>
+
+    </LinearLayout>
+
+</LinearLayout>
