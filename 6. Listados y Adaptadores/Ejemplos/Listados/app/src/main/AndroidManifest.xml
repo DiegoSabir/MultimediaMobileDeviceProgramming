@@ -25,6 +25,14 @@
             android:exported="false"/>
         <activity android:name=".Spinner_2_Activity"
             android:exported="false"/>
+        <activity android:name=".Spinner3_FromRecursos"
+            android:exported="false"/>
+        <activity android:name=".Spinner4_Dinamico"
+            android:exported="false"/>
+        <activity android:name=".Spinner5_DinamicoTrue"
+            android:exported="false"/>
+        <activity android:name=".ListView_1_Activity"
+            android:exported="false"/>
     </application>
 
 </manifest>
