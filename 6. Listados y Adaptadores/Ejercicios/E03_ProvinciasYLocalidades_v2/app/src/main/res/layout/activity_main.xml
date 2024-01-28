@@ -34,11 +34,11 @@
             android:gravity="center"
             android:padding="5dp"/>
 
-        <Spinner
-            android:id="@+id/spProvincias"
-            android:layout_width="wrap_content"
+        <AutoCompleteTextView
+            android:id="@+id/actvProvincias"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/provincias"/>
+            android:hint="Teclea Provincia"/>
 
         <LinearLayout
             android:id="@+id/containerLocalidades"

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Listas y Adaptadores"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:background="@color/purple"
+        android:padding="10dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PLANETAS"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:padding="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivMercurio"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/mercurio">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/tvMercurio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mercurio"
+                android:textSize="30sp">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivVenus"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/venus">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/tvVenus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Venus"
+                android:textSize="30sp">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivTierra"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/tierra">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/tvTierra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tierra"
+                android:textSize="30sp">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivMarte"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/marte">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/tvMarte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Marte"
+                android:textSize="30sp">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivJupiter"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/jupiter">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/tvJupiter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jupiter"
+                android:textSize="30sp">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivSaturno"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/saturno">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/tvSaturno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saturno"
+                android:textSize="30sp">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivUrano"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/urano">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/tvUrano"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Urano"
+                android:textSize="30sp">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivNeptuno"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/neptuno">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/tvNeptuno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Neptuno"
+                android:textSize="30sp">
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
