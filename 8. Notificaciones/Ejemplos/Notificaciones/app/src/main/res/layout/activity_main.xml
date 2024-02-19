@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_mensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dialogo 1 mensaje"
+        android:onClick="onClickBtn"/>
+
+    <Button
+        android:id="@+id/btn_1boton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dialogo 1 boton"
+        android:onClick="onClickBtn"/>
+
+    <Button
+        android:id="@+id/btn_2botones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dialogo 2 botones"
+        android:onClick="onClickBtn"/>
+
+    <Button
+        android:id="@+id/btn_3botones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dialogo 3 botones"
+        android:onClick="onClickBtn"/>
+
+
+    <Button
+        android:id="@+id/btn_lista_simple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dialogo lista simple"
+        android:onClick="onClickBtn"/>
+
+    <Button
+        android:id="@+id/btn_lista_simple_aceptar_opc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dialogo lista simple con boton aceptar"
+        android:onClick="onClickBtn"/>
+
+
+</LinearLayout>
