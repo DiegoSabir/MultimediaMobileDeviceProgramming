@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ALUMNOS"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/tvCurso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Curso"/>
+
+    <Spinner
+        android:id="@+id/spCursos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/cursos"/>
+
+    <Spinner
+        android:id="@+id/spCiclos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/ciclos"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tvAlumno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alumno"/>
+
+    <EditText
+        android:id="@+id/etNombreApellidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Nombre y apellidos"/>
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar"/>
+
+    <ListView
+        android:id="@+id/lvAlumnos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
