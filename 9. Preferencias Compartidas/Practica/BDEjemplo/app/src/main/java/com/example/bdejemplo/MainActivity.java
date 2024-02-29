@@ -3,6 +3,7 @@ package com.example.bdejemplo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
         //invocar el metodo de apertura correspondiente: getReadebleDatabase() y getWritableDatabase();
         db = auxiliarDB.getWritableDatabase();
+
+        //AQUI NO PUEDE IR db.close();
     }
 
     public void onClickBtn(View view){
@@ -72,15 +75,68 @@ public class MainActivity extends AppCompatActivity {
                 //metodo especifico parametrizado
                 ContentValues registroAModificar = new ContentValues();
                 registroAModificar.put("nombre", "A_A");
-                db.update("usuarios", registroAModificar, "codigo=1", null);
+                int filas = db.update("usuarios", registroAModificar, "codigo=1", null);
+                if (filas == 0){
+                    Toast.makeText(this, "Modificacion erronea parametrizada", Toast.LENGTH_SHORT).show();
+                }
                 break;
 
             case R.id.btnConsulta1:
-                //todo
+                //codigo SQL directo
+                Cursor cursor = db.rawQuery("SELECT nombre FROM usuarios WHERE codigo = 1", null);
+                if(cursor.moveToFirst()){
+                    String nombre = cursor.getString(0);
+                    Toast.makeText(this, "Nombre: " + nombre, Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(this, "Dato inexistente por consulta directa", Toast.LENGTH_SHORT).show();
+                }
+                cursor.close();
+
+                //metodo parametrizado
+                String[] datosARecuperar = {"nombre"};
+                Cursor cursor2 = db.query("usuarios", datosARecuperar, "codigo=2", null, null, null, null);
+                if(cursor2.moveToFirst()){
+                    String nombre = cursor2.getString(0);
+                    Toast.makeText(this, "Nombre: " + nombre, Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Toast.makeText(this, "Dato inexistente por consulta parametrizada", Toast.LENGTH_SHORT).show();
+                }
+                cursor2.close();
                 break;
 
             case R.id.btnConsulta2:
-                //todo
+                //codigo SQL directo
+                Cursor cursor3 = db.rawQuery("SELECT * FROM usuarios", null);
+                if(cursor3.moveToFirst()){ //recuperamos alguna tupla
+                    do{
+                        int codigo = cursor3.getInt(0);         //campo 1 recuperado --> codigo, index 0
+                        String nombre = cursor3.getString(1);   //campo 2 recuperado --> nombre, index 1
+                        Toast.makeText(this, "Nombre:" + nombre + " Codigo:" + codigo, Toast.LENGTH_SHORT).show();
+                    }
+                    while(cursor3.moveToNext());
+                }
+                else{
+                    Toast.makeText(this, "Dato inexistente por consulta directa", Toast.LENGTH_SHORT).show();
+                }
+                cursor3.close();
+
+                //metodo parametrizado
+                String[] datosARecuperar2 = {"nombre"};
+                Cursor cursor4 = db.query("usuarios", datosARecuperar2, "codigo=2", null, null, null, null);
+                if(cursor4.moveToFirst()){
+                    do{
+                        int codigo = cursor4.getInt(0);
+                        String nombre = cursor4.getString(1);
+                        Toast.makeText(this, "PARAMETRIZADO\nNombre: " + nombre, Toast.LENGTH_SHORT).show();
+                    }
+                    while(cursor4.moveToNext());
+                }
+                else{
+                    Toast.makeText(this, "Dato inexistente por consulta parametrizada", Toast.LENGTH_SHORT).show();
+                }
+                cursor4.close();
                 break;
         }
     }
