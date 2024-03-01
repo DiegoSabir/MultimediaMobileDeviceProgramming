@@ -5,45 +5,60 @@
     android:layout_height="match_parent"
     android:background="@color/background"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:padding="30dp">
 
     <TextView
         android:id="@+id/tvTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ALUMNOS"
-        android:textSize="30dp"/>
+        android:textSize="30sp"/>
 
-    <TextView
-        android:id="@+id/tvCurso"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Curso"/>
+        android:orientation="horizontal">
 
-    <Spinner
-        android:id="@+id/spCursos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:entries="@array/cursos"/>
+        <TextView
+            android:id="@+id/tvCurso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Curso"/>
 
-    <Spinner
-        android:id="@+id/spCiclos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:entries="@array/ciclos"
-        android:visibility="gone"/>
+        <Spinner
+            android:id="@+id/spCursos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/cursos"/>
 
-    <TextView
-        android:id="@+id/tvAlumno"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Alumno"/>
+        <Spinner
+            android:id="@+id/spCiclos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/ciclos"
+            android:visibility="gone"/>
 
-    <EditText
-        android:id="@+id/etNombreApellidos"
-        android:layout_width="wrap_content"
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre y apellidos"/>
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvAlumno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alumno"/>
+
+        <EditText
+            android:id="@+id/etNombreApellidos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Nombre y apellidos"/>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnGuardar"
