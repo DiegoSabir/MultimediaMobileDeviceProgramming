@@ -26,11 +26,8 @@ public class Resultado  extends AppCompatActivity {
         double imc = intent.getDoubleExtra("imc", 0);
 
         //Visualizar dato en TextView
-        tvResultado.setText("IMC = "+imc);
-
-        int valor = intent.getIntExtra("resultado", 0);
-
         tvResultado.setText("IMC = " + imc);
+
         if(imc < 25){
             ivResultado.setImageResource(R.drawable.imc_correcto);
             tvTipoResultado.setText("Normal");

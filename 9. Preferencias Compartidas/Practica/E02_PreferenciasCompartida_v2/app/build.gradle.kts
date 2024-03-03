@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.e02_preferenciascompartida_v2"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.e02_preferenciascompartida_v2"
