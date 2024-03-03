@@ -1,68 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="50dp"
+        android:text="NOTIFICACIONES" />
+
     <Button
         android:id="@+id/btn_mensaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dialogo 1 mensaje"
-        android:onClick="onClickBtn"/>
+        android:onClick="onClickBtn"
+        android:text="Diálogo con mesaje" />
 
     <Button
         android:id="@+id/btn_1boton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dialogo 1 boton"
-        android:onClick="onClickBtn"/>
+        android:onClick="onClickBtn"
+        android:text="Diálogo con un botón" />
 
     <Button
-        android:id="@+id/btn_2botones"
+        android:id="@+id/btn_2boton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dialogo 2 botones"
-        android:onClick="onClickBtn"/>
+        android:onClick="onClickBtn"
+        android:text="Diálogo con dos botón" />
 
     <Button
-        android:id="@+id/btn_3botones"
+        android:id="@+id/btn_3boton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dialogo 3 botones"
-        android:onClick="onClickBtn"/>
+        android:onClick="onClickBtn"
+        android:text="Diálogo con tres botón" />
 
     <Button
-        android:id="@+id/btn_lista_simple"
+        android:id="@+id/btn_selectlist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dialogo lista simple"
-        android:onClick="onClickBtn"/>
-
-    <!-- BOTON PARA OPCION DE DUDOSA FUNCIONALIDAD -->
-    <Button
-        android:id="@+id/btn_lista_simple_aceptar_opc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dialogo lista simple con boton aceptar"
-        android:onClick="onClickBtn"/>
+        android:onClick="onClickBtn"
+        android:text="Diálogo con Lista" />
 
     <Button
-        android:id="@+id/btn_lista_single_choice"
+        android:id="@+id/btn_selectlist_aceptar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dialogo lista seleccion unica"
-        android:onClick="onClickBtn"/>
+        android:onClick="onClickBtn"
+        android:text="Diálogo con Lista seleccion unica" />
+    <Button
+        android:id="@+id/btn_selectlist_multiple"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"
+        android:text="Diálogo con Lista multiple" />
 
     <Button
-        android:id="@+id/btn_lista_multiple_choice"
+        android:id="@+id/btn_barra_estado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dialogo lista seleccion multiple"
-        android:onClick="onClickBtn"/>
-
+        android:onClick="onClickBtn"
+        android:text="Notificacion barra estado" />
 
 </LinearLayout>

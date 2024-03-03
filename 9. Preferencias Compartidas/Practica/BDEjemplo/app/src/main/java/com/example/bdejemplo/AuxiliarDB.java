@@ -9,8 +9,10 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 public class AuxiliarDB extends SQLiteOpenHelper {
-    private String strCreateTable = ("CREATE TABLE usuarios (codigo INT PRIMARY KEY, nombre TEXT)");
     private Context context;
+    private String strCreateTable = ("CREATE TABLE usuarios (codigo INT PRIMARY KEY, nombre TEXT)");
+    private String strInsert = "INSERT INTO usuarios (codigo, nombre) VALUES (1, 'Pepe Guimaraes')";
+
 
     public AuxiliarDB(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -24,12 +26,11 @@ public class AuxiliarDB extends SQLiteOpenHelper {
 
         //sentencias de insercion de datos iniciales
         try{
-            db.execSQL("INSERT INTO usuarios (codigo, nombre) VALUES (1, 'Pepe Guimaraes')");
+            db.execSQL(strInsert);
         }
         catch (SQLException e){
             Toast.makeText(context, "Error de insercion", Toast.LENGTH_SHORT).show();
         }
-
     }
 
     @Override

@@ -3,96 +3,94 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 public class MainActivity extends AppCompatActivity {
-    private LinearLayout containerLocalidades;
-    private AutoCompleteTextView actvProvincia;
+    private AutoCompleteTextView actvProvincias;
     private Spinner spLocalidades;
-    private ArrayList<String> contentsLocalidades;
-    private ArrayAdapter<String> adaptadorProvincias;
-    private ArrayAdapter<String> adaptadorLocalidades;
+    private String provincia, localidad;
+    private String[] arrayLocalidades;
+    private ArrayAdapter<String> adaptador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Setup
-        this.containerLocalidades = findViewById(R.id.containerLocalidades);
-        this.spLocalidades = findViewById(R.id.spLocalidades);
-        this.actvProvincia = findViewById(R.id.actvProvincias);
+        actvProvincias = findViewById(R.id.actvProvincias);
+        spLocalidades = findViewById(R.id.spLocalidades);
 
-        this.containerLocalidades.setVisibility(View.GONE);
+        ArrayAdapter<CharSequence> adaptador = ArrayAdapter.createFromResource(this, R.array.provincias, android.R.layout.simple_list_item_1);
+        this.actvProvincias.setAdapter(adaptador);
+        this.actvProvincias.setThreshold(1);
 
-        this.contentsLocalidades = new ArrayList<>();
-
-        this.adaptadorProvincias = new ArrayAdapter<>(this , android.R.layout.simple_spinner_dropdown_item , getResources().getStringArray(R.array.provincias));
-        this.actvProvincia.setAdapter(adaptadorProvincias);
-
-        this.adaptadorLocalidades = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, contentsLocalidades);
-        spLocalidades.setAdapter(adaptadorLocalidades);
-
-        this.containerLocalidades.setVisibility(View.GONE);
-
-        //Listeners
-        this.spLocalidades.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        actvProvincias.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this, "Provincia: " + actvProvincia.getText().toString() + "\nLocalidad: " + spLocalidades.getItemAtPosition(position).toString(), Toast.LENGTH_SHORT).show();
-            }
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                // Obtener la provincia seleccionada
+                provincia = adapterView.getItemAtPosition(i).toString();
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+                // Buscar el índice de la provincia seleccionada en el array de provincias
+                int indiceProvincia = buscarIndiceProvincia(provincia);
+
+                // Llama al método para cargar las localidades según el índice de la provincia seleccionada
+                cargarLocalidades(indiceProvincia);
             }
         });
 
-        this.actvProvincia.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        // Configuración del Spinner de Localidades
+        spLocalidades.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switchInput(actvProvincia.getText().toString());
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                // Obtener la localidad seleccionada
+                localidad = adapterView.getItemAtPosition(i).toString();
+                // Mostrar un mensaje con la provincia y la localidad seleccionadas
+                Toast.makeText(MainActivity.this, "Provincia: " + provincia + "\nLocalidad: " + localidad, Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
     }
 
-    private void switchInput(String s) {
-        this.contentsLocalidades.clear();
 
-        switch (s) {
-            case "A Coruña":
-                this.llenarLocalidades(getResources().getStringArray(R.array.localidadesACoruña));
+    // Método para cargar las localidades según la provincia seleccionada en el Spinner de Provincias
+    public void cargarLocalidades(int i) {
+        switch (i) {
+            case 0:
+                arrayLocalidades = getResources().getStringArray(R.array.localidadesACoruña);
                 break;
 
-            case "Pontevedra":
-                this.llenarLocalidades(getResources().getStringArray(R.array.localidadesLugo));
+            case 1:
+                arrayLocalidades = getResources().getStringArray(R.array.localidadesLugo);
                 break;
 
-            case "Lugo":
-                this.llenarLocalidades(getResources().getStringArray(R.array.localidadesPontevedra));
+            case 2:
+                arrayLocalidades = getResources().getStringArray(R.array.localidadesPontevedra);
                 break;
 
-            case "Ourense":
-                this.llenarLocalidades(getResources().getStringArray(R.array.localidadesOurense));
+            case 3:
+                arrayLocalidades = getResources().getStringArray(R.array.localidadesOurense);
                 break;
-
-            default:
-                Toast.makeText(this, "Has seleccionado: " + s, Toast.LENGTH_SHORT).show();
-                containerLocalidades.setVisibility(View.GONE);
         }
+        // Crear un adaptador para las localidades y establecerlo en el Spinner de Localidades
+        adaptador = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, arrayLocalidades);
+        spLocalidades.setAdapter(adaptador);
     }
 
-    private void llenarLocalidades(String[] arr){
-        Collections.addAll(this.contentsLocalidades, arr);
-        containerLocalidades.setVisibility(View.VISIBLE);
-        this.adaptadorLocalidades.notifyDataSetChanged();
+    // Método para buscar el índice de la provincia seleccionada en el array de provincias
+    private int buscarIndiceProvincia(String provincia) {
+        String[] provincias = getResources().getStringArray(R.array.provincias);
+        for (int i = 0; i < provincias.length; i++) {
+            if (provincias[i].equals(provincia)) {
+                return i;
+            }
+        }
+        return -1; // Si no se encuentra la provincia
     }
 }

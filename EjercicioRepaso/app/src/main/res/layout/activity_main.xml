@@ -16,15 +16,17 @@
         android:textSize="30sp"/>
 
     <LinearLayout
+        android:id="@+id/llCursos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="10dp">
 
         <TextView
-            android:id="@+id/tvCurso"
+            android:id="@+id/tvCursos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Curso"/>
+            android:text="Curso:"/>
 
         <Spinner
             android:id="@+id/spCursos"
@@ -32,19 +34,35 @@
             android:layout_height="wrap_content"
             android:entries="@array/cursos"/>
 
-        <Spinner
-            android:id="@+id/spCiclos"
+        <LinearLayout
+            android:id="@+id/llCiclos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/ciclos"
-            android:visibility="gone"/>
+            android:layout_marginLeft="15dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvCiclos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Curso:"/>
+
+            <Spinner
+                android:id="@+id/spCiclos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/ciclos"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/tvAlumno"
@@ -56,7 +74,8 @@
             android:id="@+id/etNombreApellidos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="Nombre y apellidos"/>
+            android:hint="Nombre y apellidos"
+            android:inputType="textCapWords"/>
 
     </LinearLayout>
 
@@ -64,7 +83,8 @@
         android:id="@+id/btnGuardar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Guardar"/>
+        android:text="Guardar"
+        android:onClick="onClickBtn"/>
 
     <ListView
         android:id="@+id/lvAlumnos"

@@ -4,77 +4,59 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background"
+    android:background="@color/backgroundAplicacion"
     android:padding="22dp">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/titulo"
-        android:textSize="25sp"
-        android:textColor="@color/white"/>
-    
-    <LinearLayout
+    <ImageView
+        android:id="@+id/ivLogo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:src="@drawable/logo"
+        android:background="@color/backgroundImagen"
+        android:padding="22dp"/>
+
+    <LinearLayout
+        android:id="@+id/llImc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/backgroundImagen"
         android:gravity="center"
-        android:background="@color/pink"
-        android:orientation="vertical">
-        
-        <ImageView
-            android:id="@+id/ivLogo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/logo"
-            android:longClickable="true"
-            android:visibility="visible"/>
+        android:visibility="gone"
+        android:padding="22dp">
 
         <TextView
-            android:id="@+id/tvTitulo2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/tvTitulo2"
-            android:textColor="@color/background"
+            android:text="IMC"
             android:textSize="25sp"
-            android:visibility="gone"/>
+            android:textColor="@color/backgroundAplicacion"/>
 
         <RadioGroup
             android:id="@+id/rgOpciones"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
+            android:orientation="vertical">
 
             <RadioButton
-                android:id="@+id/rbCalcular"
+                android:id="@+id/rbImc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@string/rbCalcular"/>
+                android:text="Calcular IMC"
+                android:checked="true"/>
 
             <RadioButton
                 android:id="@+id/rbInformacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/rbInformacion"/>
-
-            <Button
-                android:id="@+id/btnCalcular"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/btnCalcular"
-                android:visibility="gone"
-                android:onClick="onClickBtn"/>
-
-            <Button
-                android:id="@+id/btnInformacion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/btnInformacion"
-                android:visibility="gone"
-                android:onClick="onClickBtn"/>
+                android:text="Mas informacion"/>
 
         </RadioGroup>
+
+        <Button
+            android:id="@+id/btnOpcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 

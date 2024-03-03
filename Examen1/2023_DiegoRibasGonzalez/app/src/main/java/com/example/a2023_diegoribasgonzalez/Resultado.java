@@ -2,54 +2,46 @@ package com.example.a2023_diegoribasgonzalez;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Resultado  extends AppCompatActivity {
-    private TextView tvResultado, tvCorrecto, tvSobrepeso, tvObesidad;
-    private ImageView ivCorrecto, ivSobrepeso, ivObesidad;
+    TextView tvResultado, tvTipoResultado;
+    ImageView ivResultado;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultado);
 
         tvResultado = findViewById(R.id.tvResultado);
-        tvCorrecto = findViewById(R.id.tvCorrecto);
-        tvSobrepeso = findViewById(R.id.tvSobrepeso);
-        tvObesidad = findViewById(R.id.tvObesidad);
+        tvTipoResultado = findViewById(R.id.tvTipoResultado);
+        ivResultado = findViewById(R.id.ivResultado);
 
-        ivCorrecto = findViewById(R.id.ivCorrecto);
-        ivSobrepeso = findViewById(R.id.ivSobrepeso);
-        ivObesidad = findViewById(R.id.ivObesidad);
-
+        //Recuperar dato enviado desde MainActivity mediante el Intent
         Intent intent = getIntent();
 
-        String imc = intent.getStringExtra("imc");
+        //Extraer el dato
+        double imc = intent.getDoubleExtra("imc", 0);
 
-
+        //Visualizar dato en TextView
+        tvResultado.setText("IMC = "+imc);
 
         int valor = intent.getIntExtra("resultado", 0);
 
         tvResultado.setText("IMC = " + imc);
-
-        mostrar(valor);
-    }
-
-    public void mostrar(double valor){
-        if(valor >= 30){
-            ivObesidad.setVisibility(View.VISIBLE);
-            tvObesidad.setVisibility(View.VISIBLE);
+        if(imc < 25){
+            ivResultado.setImageResource(R.drawable.imc_correcto);
+            tvTipoResultado.setText("Normal");
         }
-        else if (valor >= 25 && valor < 30){
-            ivSobrepeso.setVisibility(View.VISIBLE);
-            tvSobrepeso.setVisibility(View.VISIBLE);
+        else if (imc < 30){
+            ivResultado.setImageResource(R.drawable.imc_sobrepeso);
+            tvTipoResultado.setText("Sobrepeso");
         }
-        else if (valor < 25){
-            ivCorrecto.setVisibility(View.VISIBLE);
-            ivCorrecto.setVisibility(View.VISIBLE);
+        else {
+            ivResultado.setImageResource(R.drawable.imc_obesidad);
+            tvTipoResultado.setText("Obesidad");
         }
     }
 }

@@ -10,7 +10,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
     private AutoCompleteTextView actvNombres;
 
     @Override
@@ -20,14 +19,19 @@ public class MainActivity extends AppCompatActivity {
 
         this.actvNombres = findViewById(R.id.actvNombres);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.nombres));
-        this.actvNombres.setAdapter(adapter);
+        // Crear un adaptador con la lista de nombres y establecerlo en el AutoCompleteTextView
+        ArrayAdapter<CharSequence> adaptador = ArrayAdapter.createFromResource(this, R.array.nombres, android.R.layout.simple_list_item_1);
+        this.actvNombres.setAdapter(adaptador);
+        // Configurar el número mínimo de caracteres para comenzar a mostrar sugerencias
+        this.actvNombres.setThreshold(1);
 
+        // Configurar el listener para manejar los clics en los elementos del AutoCompleteTextView
         actvNombres.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                Toast.makeText(MainActivity.this, "Selecsionao: " + actvNombres.getText().toString() , Toast.LENGTH_SHORT).show();
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                // Obtener el nombre seleccionado y mostrar un mensaje
+                String elemento = adapterView.getItemAtPosition(i).toString();
+                Toast.makeText(MainActivity.this, "Nombre: " + elemento, Toast.LENGTH_SHORT).show();
             }
         });
     }

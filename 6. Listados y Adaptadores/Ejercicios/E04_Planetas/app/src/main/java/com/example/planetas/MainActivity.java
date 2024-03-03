@@ -11,7 +11,6 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private ListView lvPlanetas;
-    private int[] arrayIdIvPlanetas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,25 +19,22 @@ public class MainActivity extends AppCompatActivity {
 
         lvPlanetas = findViewById(R.id.lvPlanetas);
 
-        arrayIdIvPlanetas = new int[]{
-                R.drawable.mercurio, R.drawable.venus, R.drawable.tierra, R.drawable.marte, R.drawable.jupiter, R.drawable.saturno, R.drawable.urano, R.drawable.neptuno
-        };
+        //Crear instancia del adaptador personalizado
+        AdaptadorPlanetas adaptador = new AdaptadorPlanetas(this, R.layout.lista,
+                getResources().getStringArray(R.array.planetas),
+                getResources().getStringArray(R.array.informacionPlanetas),
+                getResources().obtainTypedArray(R.array.imagenesPlanetas));
 
-        AdaptorPersonalizado adapter = new AdaptorPersonalizado(
-                this,R.layout.fila, getResources().getStringArray(R.array.planetas), arrayIdIvPlanetas, getResources().getStringArray(R.array.planetasDatos)
-        );
+        //Asignar el adaptador a la vista
+        lvPlanetas.setAdapter(adaptador);
 
-        lvPlanetas.setAdapter(adapter);
-
+        //Escuchador
         lvPlanetas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String elementoSeleccionado = parent.getItemIdAtPosition(position).toString();
-                Toast.makeText(MainActivity.this, "Has elegido" + elementoSeleccionado, Toast.LENGTH_SHORT).show();
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(MainActivity.this, "Planeta: " + adapterView.getItemAtPosition(i), Toast.LENGTH_SHORT).show();
             }
         });
-
     }
+
 }

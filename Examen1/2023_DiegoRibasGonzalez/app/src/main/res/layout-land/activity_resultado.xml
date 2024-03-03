@@ -4,77 +4,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background"
-    android:padding="22dp">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/titulo"
-        android:textSize="25sp"
-        android:textColor="@color/white"/>
+    android:padding="22dp"
+    android:background="@color/backgroundAplicacion">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal"
-        android:background="@color/pink"
+        android:background="@color/backgroundImagen"
+        android:gravity="center"
         android:padding="22dp">
 
         <TextView
             android:id="@+id/tvResultado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/background"
+            android:textSize="25sp"
+            android:textColor="@color/backgroundAplicacion"/>
+
+        <ImageView
+            android:id="@+id/ivResultado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="22dp"/>
+
+        <TextView
+            android:id="@+id/tvTipoResultado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:textSize="25sp"/>
-
-        <ImageView
-            android:id="@+id/ivCorrecto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/imc_correcto"
-            android:visibility="gone"/>
-
-        <ImageView
-            android:id="@+id/ivSobrepeso"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/imc_sobrepeso"
-            android:visibility="gone"/>
-
-        <ImageView
-            android:id="@+id/ivObesidad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/imc_obesidad"
-            android:visibility="gone"/>
-
-        <TextView
-            android:id="@+id/tvCorrecto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tvCorrecto"
-            android:textColor="@color/background"
-            android:textSize="25sp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:id="@+id/tvSobrepeso"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/background"
-            android:text="@string/tvSobrepeso"
-            android:textSize="25sp"
-            android:visibility="gone"/>
-
-        <TextView
-            android:id="@+id/tvObesidad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tvObesidad"
-            android:textColor="@color/background"
-            android:textSize="25sp"
-            android:visibility="gone"/>
 
     </LinearLayout>
 

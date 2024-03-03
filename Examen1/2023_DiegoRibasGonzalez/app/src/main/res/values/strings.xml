@@ -1,16 +1,5 @@
 <resources>
     <string name="app_name">2023_DiegoRibasGonzalez</string>
-    <string name="titulo">Calculo_IMC</string>
-    <string name="tvTitulo2">IMC</string>
-    <string name="rbCalcular">Calcular IMC</string>
-    <string name="rbInformacion">Mas informacion</string>
-    <string name="btnCalcular">CALCULAR IMC</string>
-    <string name="btnInformacion">MAS INFORMACION</string>
-    <string name="etMetros">Metros</string>
-    <string name="etKg">Kg</string>
-    <string name="btnCalculo">CALCULAR</string>
-    <string name="btnFinalizar">FIN APP</string>
-    <string name="tvCorrecto">NORMAL</string>
-    <string name="tvSobrepeso">SOBREPESO</string>
-    <string name="tvObesidad">OBESIDAD</string>
+    <string name="enlace">https://es.wikipedia.org/wiki/Indice_de_masa_corporall</string>
+    <string name="telefono">OMS Madrid-915555555</string>
 </resources>

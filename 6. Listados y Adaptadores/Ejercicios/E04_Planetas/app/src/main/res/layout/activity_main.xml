@@ -24,9 +24,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="PLANETAS"
-            android:textSize="20sp"
+            android:textSize="40sp"
             android:gravity="center"
-            android:padding="10dp"/>
+            android:padding="20dp"/>
 
         <ListView
             android:id="@+id/lvPlanetas"

@@ -6,50 +6,97 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Calcular extends AppCompatActivity {
-    private EditText etMetros, etKg;
+    private EditText etAltura, etPeso;
     private Button btnCalcular, btnFinalizar;
+    private ToggleButton tbSistemaMedida;
+    private boolean sistemaMetrico = true;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calcular);
 
-        etMetros = findViewById(R.id.etMetros);
-        etKg = findViewById(R.id.etKg);
+        etAltura = findViewById(R.id.etAltura);
+        etPeso = findViewById(R.id.etPeso);
+
+        tbSistemaMedida = findViewById(R.id.tbSistemaMedida);
 
         btnCalcular = findViewById(R.id.btnCalcular);
         btnFinalizar = findViewById(R.id.btnFinalizar);
+
+        btnCalcular.setOnClickListener(escuchadorCalcular);
+        btnFinalizar.setOnClickListener(escuchadorFinalizar);
+        tbSistemaMedida.setOnClickListener(escuchadorSistemaMedida);
     }
 
-    public void onClickBtn(View view) {
-        Intent intent;
-        int viewId = view.getId();
 
-        if (viewId == R.id.btnCalcular) {
-
-            if (!etMetros.getText().toString().isEmpty() || !etKg.getText().toString().isEmpty()){
-                String imc;
-
-                double metros =  Double.parseDouble(etMetros.getText().toString());
-                double peso =  Double.parseDouble(etKg.getText().toString());
-                double resultado = peso / (metros * metros);
-                imc = String.format("%.2f", resultado);
-
-                intent = new Intent(this, Resultado.class);
-                intent.putExtra("imc", imc);
-                intent.putExtra("resultado", resultado);
-                startActivity(intent);
+    private View.OnClickListener escuchadorCalcular = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (etAltura.getText().toString().equals("") || etPeso.getText().toString().equals("")){
+                Toast.makeText(Calcular.this, "Introduzca los datos", Toast.LENGTH_SHORT).show();
             }
             else {
-                Toast.makeText(this, "Faltan datos", Toast.LENGTH_SHORT).show();
-            }
+                double altura = Double.parseDouble(etAltura.getText().toString());
+                double peso =  Double.parseDouble(etPeso.getText().toString());
 
+                if (altura == 0){
+                    Toast.makeText(Calcular.this, "Introduzca una altura correcta", Toast.LENGTH_SHORT).show();
+                }
+
+                else {
+                    double imc;
+                    if (sistemaMetrico) {
+                        imc = peso / (altura * altura);
+                    }
+                    else {
+                        imc = peso / (altura * altura) * 703;
+                    }
+                    imc = Math.round(imc * 100) / 100.0;
+
+                    //crear objeto Intent
+                    Intent intent = new Intent(Calcular.this, Resultado.class);
+                    intent.putExtra("imc", imc);
+
+                    //Realizar la llamada
+                    startActivity(intent);
+                }
+            }
         }
-        else if (viewId == R.id.btnFinalizar) {
+    };
+
+
+    private View.OnClickListener escuchadorFinalizar = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            //volver a la MainActivity enviando un dato
+            String datoRespuesta = "Finalizar aplicacion";
+            Intent intent = new Intent();
+            intent.putExtra("respuesta", datoRespuesta);
+            setResult(RESULT_OK, intent);
             finish();
         }
-    }
+    };
+
+
+    private View.OnClickListener escuchadorSistemaMedida = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            if (tbSistemaMedida.isChecked()){
+                sistemaMetrico = false;
+                etAltura.setHint("Pulgadas");
+                etPeso.setHint("Libras");
+            }
+            else {
+                sistemaMetrico = true;
+                etAltura.setHint("Metros");
+                etPeso.setHint("Kg");
+            }
+        }
+    };
 }

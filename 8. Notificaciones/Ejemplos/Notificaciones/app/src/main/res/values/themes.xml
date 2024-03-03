@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Notificiones" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.Notificaciones" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.Notificiones" parent="Base.Theme.Notificiones" />
+    <style name="Theme.Notificaciones" parent="Base.Theme.Notificaciones" />
 </resources>
