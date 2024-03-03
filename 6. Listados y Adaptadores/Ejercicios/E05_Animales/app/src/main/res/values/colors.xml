@@ -4,7 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="purple">#673AB7</color>
     <color name="cyan">#E453FAD2</color>
-    <color name="azulclaro">#D2FFF6</color>
-    <color name="azul">#0456D1</color>
-    <color name="grey">#8C8C8C</color>
+    <color name="yellow">#FFE500</color>
+    <color name="blue">#0456D1</color>
+    <color name="red">#FF0000</color>
 </resources>

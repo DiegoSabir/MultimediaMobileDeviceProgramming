@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
                 getResources().getStringArray(R.array.animales),
                 getResources().getStringArray(R.array.informacionAnimales),
                 getResources().obtainTypedArray(R.array.fotosAnimales),
-                getResources().obtainTypedArray(R.array.colores));
+                getResources().obtainTypedArray(R.array.clasificacionAnimal));
 
         //Asignar el adaptador a la vista
         lvAnimales.setAdapter(adaptador);

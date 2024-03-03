@@ -9,7 +9,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
     private ListView lvPlanetas;
 
     @Override
@@ -36,5 +35,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
 }

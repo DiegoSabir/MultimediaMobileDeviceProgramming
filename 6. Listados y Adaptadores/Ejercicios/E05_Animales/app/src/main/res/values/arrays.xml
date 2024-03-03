@@ -3,7 +3,7 @@
 
     <string-array name="animales">
         <item>AGUILA</item>
-        <item>BALLENA</item>
+        <item>BELUGA</item>
         <item>CABALLO</item>
         <item>CANARIO</item>
         <item>DELFIN</item>
@@ -13,14 +13,14 @@
     </string-array>
 
     <string-array name="informacionAnimales">
-        <item>Ave rapaz</item>
-        <item>Mamífero marino</item>
-        <item>Porte elegante</item>
-        <item>Canto espectacular</item>
-        <item>Mamífero marino</item>
-        <item>Animal doméstico</item>
-        <item>Animal doméstico</item>
-        <item>Comida rica</item>
+        <item>Informacion del Aguila</item>
+        <item>Informacion de la Beluga</item>
+        <item>Informacion del Caballo</item>
+        <item>Informacion del Canario</item>
+        <item>Informacion del Delfin</item>
+        <item>Informacion del Gato</item>
+        <item>Informacion del Perro</item>
+        <item>Informacion de la Vaca</item>
     </string-array>
 
     <array name="fotosAnimales">
@@ -34,15 +34,15 @@
         <item>@drawable/vaca</item>
     </array>
 
-    <array name="colores">
-        <item>@drawable/color_verde</item>
-        <item>@drawable/color_azul</item>
-        <item>@drawable/color_rosa</item>
-        <item>@drawable/color_verde</item>
-        <item>@drawable/color_azul</item>
-        <item>@drawable/color_rosa</item>
-        <item>@drawable/color_rosa</item>
-        <item>@drawable/color_rosa</item>
+    <array name="clasificacionAnimal">
+        <item>@drawable/ave</item>
+        <item>@drawable/mamifero_acuatico</item>
+        <item>@drawable/mamifero_terrestre</item>
+        <item>@drawable/ave</item>
+        <item>@drawable/mamifero_acuatico</item>
+        <item>@drawable/mamifero_terrestre</item>
+        <item>@drawable/mamifero_terrestre</item>
+        <item>@drawable/mamifero_terrestre</item>
     </array>
 
 </resources>

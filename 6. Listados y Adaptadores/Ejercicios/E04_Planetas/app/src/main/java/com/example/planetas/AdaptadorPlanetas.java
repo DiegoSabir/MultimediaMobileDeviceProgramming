@@ -25,7 +25,7 @@ public class AdaptadorPlanetas extends ArrayAdapter {
             String[] arrayInformacionPlanetas,
             TypedArray arrayImagenesPlanetas) {
 
-        //constructor por defecto de la clase ArrayAdapter
+        //Constructor por defecto de la clase ArrayAdapter
         super(context, layoutPersonalizado, arrayPlanetas);
 
         this.context = context;
@@ -40,16 +40,16 @@ public class AdaptadorPlanetas extends ArrayAdapter {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        // inflamos nuestro layout personalizado
+        //Inflamos nuestro layout personalizado
         LayoutInflater layoutInflater = context.getLayoutInflater();
         View fila = layoutInflater.inflate(layoutPersonalizado, null);
 
-        //capturamos los id de cada componente de nuestro layout
+        //Capturamos los id de cada componente de nuestro layout
         TextView tvPlanetas = fila.findViewById(R.id.tvPlanetas);
         TextView tvInformacionPlanetas = fila.findViewById(R.id.tvInformacionPlanetas);
         ImageView ivPlaneta = fila.findViewById(R.id.ivPlanetas);
 
-        //insertar cada valor (planeta/imagen)
+        //Insertar cada valor (planeta/imagen)
         tvPlanetas.setText(arrayPlanetas[position]);
         tvInformacionPlanetas.setText(arrayInformacionPlanetas[position]);
         ivPlaneta.setImageDrawable(arrayImagenesPlanetas.getDrawable(position));

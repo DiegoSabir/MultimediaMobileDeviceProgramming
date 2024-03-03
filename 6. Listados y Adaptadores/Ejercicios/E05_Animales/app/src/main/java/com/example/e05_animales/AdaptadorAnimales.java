@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,7 +38,6 @@ public class AdaptadorAnimales extends ArrayAdapter {
     }
 
     //Implementar el metodo getView
-
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -61,15 +59,12 @@ public class AdaptadorAnimales extends ArrayAdapter {
 
         // Configurar el color de fondo del ImageView ivColor intercalando entre dos colores
         if (position % 2 == 0) {
-            fila.setBackgroundColor(context.getColor(R.color.azulclaro));
-            // Reemplaza R.color.tu_color con tu color deseado
-            tvAnimales.setTextColor(context.getColor(R.color.azul));
-
+            fila.setBackgroundColor(context.getColor(R.color.cyan));
+            tvAnimales.setTextColor(context.getColor(R.color.yellow));
         }
         else {
-            fila.setBackgroundColor(context.getColor(R.color.azulclaro));
-            // Reemplaza R.color.tu_color con tu color deseado
-            tvAnimales.setTextColor(context.getColor(R.color.grey));
+            fila.setBackgroundColor(context.getColor(R.color.blue));
+            tvAnimales.setTextColor(context.getColor(R.color.red));
         }
         return fila;
     }
