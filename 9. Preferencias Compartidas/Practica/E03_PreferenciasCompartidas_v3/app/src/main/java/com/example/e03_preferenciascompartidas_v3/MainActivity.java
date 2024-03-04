@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_singlechoice:
                 dialogo_lista_simple();
                 break;
+
             case R.id.btn_reset_pref:
                 Toast.makeText(this, "Reset pulsado", Toast.LENGTH_SHORT).show();
                 break;

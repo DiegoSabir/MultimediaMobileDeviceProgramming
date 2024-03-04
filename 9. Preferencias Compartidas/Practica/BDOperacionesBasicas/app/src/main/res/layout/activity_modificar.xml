@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="50dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modificar Usuario"
+        android:textSize="25sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/etCodigoModificar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Codigo del Usuario a Modificar"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/etNombreModificar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nuevo Nombre"/>
+
+    <Button
+        android:id="@+id/btnModificarUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Modificar Usuario"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/btnFinModificar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FIN"
+        android:textStyle="bold"/>
+
+</LinearLayout>
