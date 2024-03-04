@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="50dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Borrar Usuario"
+        android:textSize="25sp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/etCodigoBorrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Codigo"
+        android:inputType="number"/>
+
+    <Button
+        android:id="@+id/btnBorrarUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Borrar Usuario"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/btnFinBorrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FIN"
+        android:textStyle="bold"/>
+
+</LinearLayout>

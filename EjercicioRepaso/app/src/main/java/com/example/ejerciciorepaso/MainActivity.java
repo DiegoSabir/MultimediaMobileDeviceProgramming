@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private String ciclo;
     private String nombre;
     private AdaptadorAlumno adaptador;
-    private int selectedLv;
+    private Alumno selectedLv;
     private boolean primero = false;
 
     @Override
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Inicializar vistas
+
         llCiclos = findViewById(R.id.llCiclos);
         spCursos = findViewById(R.id.spCursos);
         spCiclos = findViewById(R.id.spCiclos);
@@ -45,86 +45,89 @@ public class MainActivity extends AppCompatActivity {
         lvAlumnos = findViewById(R.id.lvAlumnos);
         etNombreApellidos = findViewById(R.id.etNombreApellidos);
 
-        // Configurar listeners
+
         escuchadorCursos();
         escuchadorCiclos();
 
-        // Crear adaptador para la lista de alumnos
+
         createAdapter();
 
-        // Configurar listener para clics en la lista de alumnos
+
         clickListenerLv();
 
-        // Registrar la lista de alumnos para el menú contextual
+
         registerForContextMenu(lvAlumnos);
     }
 
 
-    // Crear el adaptador para la lista de alumnos
     private void createAdapter() {
+        // Crea y establece un adaptador personalizado (AdaptadorAlumno) para el ListView lvAlumnos.
+        // Toma la lista arrayAlumnos como origen de datos y el diseño R.layout.lista para cada elemento de la lista.
         adaptador = new AdaptadorAlumno(this , R.layout.lista, arrayAlumnos);
+
+        // Establece el adaptador creado en el ListView lvAlumnos, lo que permite mostrar los datos de los alumnos en la interfaz de usuario.
         lvAlumnos.setAdapter(adaptador);
     }
 
 
-    // Configurar listener para clics en la lista de alumnos
+    // Configura un escuchador de clics para el ListView
     private void clickListenerLv() {
         lvAlumnos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // Cuando se hace clic en un elemento de la lista, se muestra un mensaje emergente (Toast) con la información del alumno seleccionado.
                 Toast.makeText(MainActivity.this, arrayAlumnos.get(position).toString(), Toast.LENGTH_SHORT).show();
-                selectedLv = position;
             }
         });
     }
 
 
-    // Crear el menú contextual cuando se realiza un long click en un elemento de la lista
+    // Este método se llama cuando se está creando un menú contextual para el ListView
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
+
         MenuInflater inflater = getMenuInflater();
+
+        //  Infla el menú contextual desde el archivo XML menu_contextual.xml y establece un encabezado para el menú con el nombre del alumno seleccionado.
         inflater.inflate(R.menu.menu_contextual, menu);
 
-        // Obtener la información del alumno seleccionado
-        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
-        int position = info.position;
-        Alumno alumnoSeleccionado = arrayAlumnos.get(position);
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
 
-        // Establecer el título del menú contextual usando el nombre del alumno seleccionado
-        menu.setHeaderTitle(alumnoSeleccionado.getNombre());
+        try{
+            selectedLv = (Alumno) lvAlumnos.getAdapter().getItem(info.position);
+            nombre = selectedLv.getNombre();
+        }
+        catch (Exception e){
+            Toast.makeText(this, "Error: " + e, Toast.LENGTH_SHORT).show();
+        }
+        menu.setHeaderTitle(nombre);
     }
 
 
-    // Manejar las acciones del menú contextual
+    //  Este método se llama cuando se selecciona un elemento del menú contextual.
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
-        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-        int position = info.position;
-
         switch (item.getItemId()){
-            // Eliminar el alumno seleccionado de la lista
+            //Si se selecciona "Eliminar", se elimina el alumno seleccionado de la lista y se actualiza el adaptador
             case R.id.ctx_eliminar:
-                arrayAlumnos.remove(position);
+                arrayAlumnos.remove(selectedLv);
                 adaptador.notifyDataSetChanged();
                 Toast.makeText(this, "Has eliminado al alumno", Toast.LENGTH_SHORT).show();
-                return true;
 
-            // Salir del menu contextual
+            //Si se selecciona "Salir", se muestra un mensaje Toast indicando que se ha salido del menú contextual.
             case R.id.ctx_salir:
                 Toast.makeText(this, "Has salido del Menú Contextual", Toast.LENGTH_SHORT).show();
-                return true;
-
-            // Si no se reconoce la opción del menú, se delega al método de la superclase para manejarlo
-            default:
-                return super.onContextItemSelected(item);
         }
+        return super.onContextItemSelected(item);
     }
 
 
-    // Configurar el listener para el spinner de ciclos
+    //Este método configura un escuchador para el Spinner spCiclos
     private void escuchadorCiclos() {
         spCiclos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            //Cuando se selecciona un elemento del Spinner, se guarda su valor en la variable ciclo.
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 ciclo = spCiclos.getSelectedItem().toString();
@@ -137,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // Configurar el listener para el spinner de cursos
+    // Este método configura un escuchador para el Spinner
     private void escuchadorCursos() {
         spCursos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -151,15 +154,16 @@ public class MainActivity extends AppCompatActivity {
                     ciclo = "";
                 }
 
+                // Obtiene el valor del elemento seleccionado en el Spinner spCursos y lo asigna a la variable curso.
                 curso = spCursos.getSelectedItem().toString();
 
+                // Verifica si primero es false. primero es una variable booleana que indica si es la primera vez que se selecciona un curso.
                 if (!primero){
                     primero = true;
                 }
                 else {
                     Toast.makeText(MainActivity.this, curso, Toast.LENGTH_SHORT).show();
                 }
-
             }
 
             @Override
@@ -169,10 +173,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // Manejar el clic en el botón de guardar
+    // Este método maneja el clic en el botón de guardar
     public void onClickBtn(View view) {
         switch (view.getId()){
             case R.id.btnGuardar:
+                //Verifica si los campos de edición contienen datos válidos llamando al método comprobarEdit()
                 if (comprobarEdit()){
                     guardarAlumno();
                 }
@@ -181,15 +186,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    // Guardar un nuevo alumno en la lista
+
     private void guardarAlumno() {
+        // Obtiene el nombre del alumno del EditText etNombreApellidos.
         nombre = etNombreApellidos.getText().toString();
+        // Crea un nuevo objeto Alumno con los datos ingresados y lo agrega a la lista.
         arrayAlumnos.add(new Alumno(nombre, curso, ciclo));
+        // Notifica al adaptador que los datos han cambiado para que actualice la vista del ListView.
         adaptador.notifyDataSetChanged();
     }
 
 
-    // Comprobar si se ha ingresado un nombre válido
+    //  Verifica si el campo de edición (etNombreApellidos) contiene datos válidos. Si el campo está vacío
     private boolean comprobarEdit() {
         boolean nombreValido = false;
         if (etNombreApellidos.getText().toString().trim().isEmpty()){

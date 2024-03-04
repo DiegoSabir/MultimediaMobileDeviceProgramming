@@ -26,7 +26,7 @@ public class AdaptadorAlumno extends ArrayAdapter {
     }
 
 
-    // Método para obtener la vista de cada elemento en la lista
+    // Método getView para inflar las vistas personalizadas en el ListView
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
@@ -34,32 +34,35 @@ public class AdaptadorAlumno extends ArrayAdapter {
         View fila = convertView;
         ViewHolder holder;
 
-        // Si la fila es nula, inflarla con el layout personalizado y asignar los componentes a ViewHolder
+        // Si la vista no está siendo reciclada, inflar la vista personalizada
         if (fila == null){
             LayoutInflater inflater = activity.getLayoutInflater();
 
             fila = inflater.inflate(layoutPersonalizado, null);
 
+            // Inicializar el objeto ViewHolder y asignar referencias a los elementos de la vista
             holder = new ViewHolder();
             holder.tvNombreAlumno = fila.findViewById(R.id.tvNombreAlumno);
             holder.tvCurso = fila.findViewById(R.id.tvCurso);
             holder.tvCiclo = fila.findViewById(R.id.tvCiclo);
             holder.ivAlumnoCurso = fila.findViewById(R.id.ivAlumnoCurso);
 
+            // Establecer el objeto ViewHolder como una etiqueta de la vista
             fila.setTag(holder);
         }
-        // Si la fila ya tiene un ViewHolder asignado, obtenerlo directamente
+
         else {
+            // Si la vista está siendo reciclada, obtener el objeto ViewHolder de la etiqueta de la vista
             holder = (ViewHolder) fila.getTag();
         }
 
-        // Establecer los valores de los componentes de la fila con los datos del alumno en la posición actual
+        // Obtener los datos del alumno en la posición actual y establecerlos en los elementos de la vista
         holder.tvNombreAlumno.setText(arrayAlumnos.get(position).getNombre().toUpperCase());
         holder.tvCurso.setText(arrayAlumnos.get(position).getCurso());
         holder.tvCiclo.setText(arrayAlumnos.get(position).getCiclo());
 
 
-        // Establecer la imagen del tipo de alumno según su curso
+        // Según el curso del alumno, establecer una imagen diferente para ivAlumnoCurso
         if (arrayAlumnos.get(position).getCurso().equals("ESO")){
             holder.ivAlumnoCurso.setImageResource(R.drawable.eso);
         }
@@ -69,10 +72,13 @@ public class AdaptadorAlumno extends ArrayAdapter {
         else {
             holder.ivAlumnoCurso.setImageResource(R.drawable.ciclo);
         }
+
+        // Devolver la vista personalizada
         return fila;
     }
 
-    // Clase ViewHolder para almacenar los componentes de la fila y evitar búsquedas innecesarias
+
+    // Clase ViewHolder para contener las referencias a los elementos de la vista personalizada
     static class ViewHolder{
         TextView tvNombreAlumno;
         TextView tvCurso;

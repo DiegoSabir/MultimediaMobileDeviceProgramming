@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:baselineAligned="false"
+    android:padding="15dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txtTitle"
+        android:textStyle="bold"
+        android:textSize="@dimen/titleSize"
+        android:layout_margin="@dimen/margins"/>
+
+    <Button
+        android:id="@+id/btn1_spinner"
+        android:layout_width="@dimen/btnWidth"
+        android:layout_height="wrap_content"
+        android:text="Spinner sin adaptador"
+        style="?android:attr/buttonBarButtonStyle"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:onClick="onClickBtnListados"/>
+
+    <Button
+        android:id="@+id/btn2_spinner"
+        android:layout_width="@dimen/btnWidth"
+        android:layout_height="wrap_content"
+        android:text="@string/btnSpnAdaptador"
+        style="?android:attr/buttonBarButtonStyle"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:onClick="onClickBtnListados"/>
+
+    <Button
+        android:id="@+id/btn3_spinner"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Spinner adaptador + recurso"
+        style="?android:attr/buttonBarButtonStyle"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:onClick="onClickBtnListados"/>
+
+    <Button
+        android:id="@+id/btn4_spinner"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Spinner dinamico ¿?"
+        style="?android:attr/buttonBarButtonStyle"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:onClick="onClickBtnListados"/>
+
+    <Button
+        android:id="@+id/btn5_spinner"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Spinner dinamico"
+        style="?android:attr/buttonBarButtonStyle"
+        android:backgroundTint="@color/black"
+        android:textColor="@color/white"
+        android:onClick="onClickBtnListados"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/black"/>
+
+    <Button
+        android:id="@+id/btn1_listView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="List View 1"
+        android:onClick="onClickBtnListados"/>
+
+    <Button
+        android:id="@+id/btn2_listView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="List View Adaptador"
+        android:onClick="onClickBtnListados"/>
+    <Button
+        android:id="@+id/btn3_listView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="List View Adaptador Dinámico"
+        android:onClick="onClickBtnListados"/>
+
+    <Button
+        android:id="@+id/btn4_listView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="List View personalizado"
+        android:onClick="onClickBtnListados"/>
+    <Button
+        android:id="@+id/btn5_listView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="List View personalizado del todo"
+        android:onClick="onClickBtnListados"/>
+    <Button
+        android:id="@+id/btn6_listView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="List View personalizado con typedArray"
+        android:onClick="onClickBtnListados"/>
+
+</LinearLayout>
