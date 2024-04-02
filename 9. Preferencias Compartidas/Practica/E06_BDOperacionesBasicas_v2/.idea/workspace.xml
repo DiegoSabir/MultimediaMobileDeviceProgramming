@@ -10,175 +10,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d1c48d1-f393-434c-98b7-ec0397062d33" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/java/com/example/listados/Planeta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/java/com/example/listados/adaptadores/AdaptadorPersonalizado1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/java/com/example/listados/adaptadores/AdaptadorPersonalizado2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/java/com/example/listados/adaptadores/AdaptadorPersonalizado3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/java/com/example/listados/listviews/ListView1_Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/java/com/example/listados/listviews/ListView2_Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/java/com/example/listados/listviews/ListView3_Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/java/com/example/listados/listviews/ListView4_Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/java/com/example/listados/listviews/ListView5_Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/java/com/example/listados/listviews/ListView6_Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/java/com/example/listados/spinners/Spinner_1_Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/java/com/example/listados/spinners/Spinner_2_Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/java/com/example/listados/spinners/Spinner_3_Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/java/com/example/listados/spinners/Spinner_4_Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/java/com/example/listados/spinners/Spinner_5_Activity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/drawable/jupiter.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/drawable/marte.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/drawable/mercurio.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/drawable/neptuno.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/drawable/saturno.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/drawable/tierra.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/drawable/urano.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/drawable/venus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/layout/activity_list_view1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/layout/activity_list_view2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/layout/activity_list_view3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/layout/activity_list_view4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/layout/activity_list_view5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/layout/activity_list_view6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/layout/activity_spinner1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/layout/activity_spinner2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/layout/activity_spinner3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/layout/activity_spinner4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/layout/activity_spinner5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/layout/fila_diferentes_imagenes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/layout/fila_simple.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../6. Listados y Adaptadores/Ejemplos/Listados/app/src/main/res/values/arrays.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../7. Menus/Ejemplos/Ejemplo1/app/src/main/java/com/example/menus/Activity2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../7. Menus/Ejemplos/Ejemplo1/app/src/main/java/com/example/menus/ActivityAuxiliar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../7. Menus/Ejemplos/Ejemplo1/app/src/main/res/drawable/img_planeta.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../7. Menus/Ejemplos/Ejemplo1/app/src/main/res/layout/activity_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../7. Menus/Ejemplos/Ejemplo1/app/src/main/res/layout/activity_auxiliar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/example/e06_bdoperacionesbasicas_v2/ExampleInstrumentedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/e06_bdoperacionesbasicas_v2/AuxiliarDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/e06_bdoperacionesbasicas_v2/Borrar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/e06_bdoperacionesbasicas_v2/Consultar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/e06_bdoperacionesbasicas_v2/ConsultarN.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/e06_bdoperacionesbasicas_v2/ConsultarNListView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/e06_bdoperacionesbasicas_v2/Insertar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/e06_bdoperacionesbasicas_v2/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/e06_bdoperacionesbasicas_v2/Modificar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_borrar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_consultar1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_consultar_n.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_consultar_nlist_view.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_insertar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_modificar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/backup_rules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/xml/data_extraction_rules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/test/java/com/example/e06_bdoperacionesbasicas_v2/ExampleUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejemplos/Ejemplo1/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../7. Menus/Ejemplos/Ejemplo1/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejemplos/Ejemplo1/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../7. Menus/Ejemplos/Ejemplo1/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejemplos/Ejemplo1/app/src/main/java/com/example/menus/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../7. Menus/Ejemplos/Ejemplo1/app/src/main/java/com/example/menus/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejemplos/Ejemplo1/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../7. Menus/Ejemplos/Ejemplo1/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejemplos/Ejemplo1/app/src/main/res/menu/menu_contextual.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../7. Menus/Ejemplos/Ejemplo1/app/src/main/res/menu/menu_contextual.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejemplos/Ejemplo1/app/src/main/res/menu/menu_opciones.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../7. Menus/Ejemplos/Ejemplo1/app/src/main/res/menu/menu_opciones.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/.idea/deploymentTargetDropDown.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/androidTest/java/com/example/menuscontextuales/ExampleInstrumentedTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/java/com/example/menuscontextuales/AuxiliarActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/java/com/example/menuscontextuales/MainActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/java/com/example/menuscontextuales/SecondActivity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/drawable/imagen_abc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/layout/activity_second.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/menu/menu_contextual.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/menu/menu_contextual_imagen.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/menu/menu_opciones.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/values-night/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/app/src/test/java/com/example/menuscontextuales/ExampleUnitTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../7. Menus/Ejercicios/E01_MenusContextuales/settings.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BDOperacionesBasicas/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BDOperacionesBasicas/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BDOperacionesBasicas/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BDOperacionesBasicas/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../EjercicioRepaso/app/src/main/java/com/example/ejerciciorepaso/AdaptadorAlumno.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../EjercicioRepaso/app/src/main/java/com/example/ejerciciorepaso/AdaptadorAlumno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../EjercicioRepaso/app/src/main/java/com/example/ejerciciorepaso/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../EjercicioRepaso/app/src/main/java/com/example/ejerciciorepaso/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../E03_PreferenciasCompartidas_v3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../E03_PreferenciasCompartidas_v3/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../EjercicioRepaso/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../EjercicioRepaso/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Examen1/2023_DiegoRibasGonzalez/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Examen1/2023_DiegoRibasGonzalez/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ProyectoPreExamen-SinActualizarIDE/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ProyectoPreExamen-SinActualizarIDE/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ProyectoPreExamen-SinActualizarIDE/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ProyectoPreExamen-SinActualizarIDE/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ProyectoPreExamen-SinActualizarIDE/app/src/main/res/layout/lists_activity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ProyectoPreExamen-SinActualizarIDE/app/src/main/res/layout/lists_activity.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\diego\.android\avd\3.4_WQVGA_API_23.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\a18diegorg\.android\avd\Pixel_3a_API_23.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="E06_BDOperacionesBasicas_v2" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="E06_BDOperacionesBasicas_v2" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="E06_BDOperacionesBasicas_v2" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="E06_BDOperacionesBasicas_v2" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -206,7 +95,7 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/diego/OneDrive/Documentos/GitHub/MultimediaMobileDeviceProgramming/9. Preferencias Compartidas/Practica/E06_BDOperacionesBasicas_v2/app/src/main/res/layout"
+    "last_opened_file_path": "C:/Users/a18diegorg/Documents/GitHub/MultimediaMobileDeviceProgramming/9. Preferencias Compartidas/Practica/E06_BDOperacionesBasicas_v2"
   }
 }]]></component>
   <component name="RecentsManager">
