@@ -13,7 +13,8 @@
         android:layout_height="match_parent"
         android:src="@drawable/logo"
         android:background="@color/backgroundImagen"
-        android:padding="22dp"/>
+        android:padding="22dp"
+        android:visibility="gone"/>
 
     <LinearLayout
         android:id="@+id/llImc"
@@ -22,7 +23,7 @@
         android:orientation="vertical"
         android:background="@color/backgroundImagen"
         android:gravity="center"
-        android:visibility="gone"
+        android:visibility="visible"
         android:padding="22dp">
 
         <TextView
