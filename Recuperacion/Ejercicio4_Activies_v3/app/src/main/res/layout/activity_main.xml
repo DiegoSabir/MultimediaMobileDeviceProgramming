@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:background="@color/purple"/>
+
+    <LinearLayout
+        android:id="@+id/llBtnPantallas"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnPantalla1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PANTALLA1"
+            android:onClick="onClickBtn"/>
+
+        <Button
+            android:id="@+id/btnPantalla2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PANTALLA2"
+            android:onClick="onClickBtn"/>
+
+        <Button
+            android:id="@+id/btnPantalla3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PANTALLA3"
+            android:onClick="onClickBtn"/>
+
+        <Button
+            android:id="@+id/btnPantalla4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PANTALLA4"
+            android:onClick="onClickBtn"/>
+
+    </LinearLayout>
+
+</LinearLayout>

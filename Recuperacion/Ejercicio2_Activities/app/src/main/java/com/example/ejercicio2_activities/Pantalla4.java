@@ -1,7 +1,6 @@
 package com.example.ejercicio2_activities;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
@@ -86,10 +85,6 @@ public class Pantalla4 extends AppCompatActivity {
             }
         });
 
-        int hideViewId = getIntent().getIntExtra("hideViewId", -1);
-        if (hideViewId != -1) {
-            findViewById(hideViewId).setVisibility(View.INVISIBLE);
-        }
     }
 
     private void returnColor(int color) {

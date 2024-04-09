@@ -1,4 +1,4 @@
-package com.example.ejercicio2_activities;
+package com.example.ejercicio5_dialog;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -30,12 +30,13 @@ public class Auxiliar extends AppCompatActivity {
         rgOpciones = findViewById(R.id.rgOpciones);
         btnEntendido = findViewById(R.id.btnEntendido);
 
-
+        // Obtener el color del intent
         int color = getIntent().getIntExtra("color", Color.WHITE);
 
-
+        // Establecer el fondo del LinearLayout principal con el color recibido del intent
         llOtrosBtn.setBackgroundColor(color);
 
+        // Determinar que mostrar según la actividad de origen
         String fromActivity = getIntent().getStringExtra("fromActivity");
         switch (fromActivity) {
             case "Pantalla2":
@@ -81,12 +82,12 @@ public class Auxiliar extends AppCompatActivity {
 
             case R.id.btnInicio:
                 intent = new Intent(Auxiliar.this, MainActivity.class);
-                finish();
+                finishAffinity();
                 startActivity(intent);
                 break;
 
             case R.id.btnFinalizar:
-                finishAffinity();
+                finishAffinity(); // Esto finaliza todas las actividades de la aplicación
                 break;
         }
     }

@@ -1,7 +1,6 @@
-package com.example.ejercicio2_activities;
+package com.example.ejercicio4_activies_v3;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,11 +29,8 @@ public class Auxiliar extends AppCompatActivity {
         rgOpciones = findViewById(R.id.rgOpciones);
         btnEntendido = findViewById(R.id.btnEntendido);
 
-
-        int color = getIntent().getIntExtra("color", Color.WHITE);
-
-
-        llOtrosBtn.setBackgroundColor(color);
+        int backgroundColor = getIntent().getIntExtra("backgroundColor", 0);
+        llOtrosBtn.setBackgroundColor(backgroundColor);
 
         String fromActivity = getIntent().getStringExtra("fromActivity");
         switch (fromActivity) {
@@ -50,7 +46,7 @@ public class Auxiliar extends AppCompatActivity {
             case "Pantalla4":
                 findViewById(R.id.llOtrosBtn).setVisibility(View.GONE);
                 findViewById(R.id.llRadioGroup).setVisibility(View.VISIBLE);
-                colorView.setBackgroundColor(color);
+                colorView.setBackgroundColor(backgroundColor);
                 break;
         }
 
@@ -64,7 +60,7 @@ public class Auxiliar extends AppCompatActivity {
                 }
                 else{
                     Intent intent = new Intent(Auxiliar.this, Pantalla4.class);
-                    intent.putExtra("color", color);
+                    intent.putExtra("color", backgroundColor);
                     finish();
                     startActivity(intent);
                 }
@@ -103,3 +99,4 @@ public class Auxiliar extends AppCompatActivity {
         }
     };
 }
+
