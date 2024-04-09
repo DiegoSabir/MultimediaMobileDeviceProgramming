@@ -9,6 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Pantalla4 extends AppCompatActivity {
     private View redView, yellowView, orangeView, greenView, blueView, purpleView, whiteView, grayView, zaphireView;
+    private static final int REQUEST_CODE = 0;
+    int idColor;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla4);
@@ -25,81 +28,97 @@ public class Pantalla4 extends AppCompatActivity {
     }
 
     public void onClick(View v) {
-        Intent intent;
-        int backgroundColor;
+        Intent intent = new Intent(Pantalla4.this, Auxiliar.class);
+        int backgroundColor = 0;
 
         switch (v.getId()){
             case R.id.redView:
-                intent = new Intent(Pantalla4.this, Auxiliar.class);
                 backgroundColor = ((ColorDrawable) redView.getBackground()).getColor();
-                intent.putExtra("backgroundColor", backgroundColor);
-                intent.putExtra("fromActivity", "Pantalla3");
-                startActivity(intent);
+                idColor = 1;
                 break;
 
             case R.id.yellowView:
-                intent = new Intent(Pantalla4.this, Auxiliar.class);
                 backgroundColor = ((ColorDrawable) yellowView.getBackground()).getColor();
-                intent.putExtra("backgroundColor", backgroundColor);
-                intent.putExtra("fromActivity", "Pantalla3");
-                startActivity(intent);
+                idColor = 2;
                 break;
 
             case R.id.orangeView:
-                intent = new Intent(Pantalla4.this, Auxiliar.class);
                 backgroundColor = ((ColorDrawable) orangeView.getBackground()).getColor();
-                intent.putExtra("backgroundColor", backgroundColor);
-                intent.putExtra("fromActivity", "Pantalla3");
-                startActivity(intent);
+                idColor = 3;
                 break;
 
             case R.id.greenView:
-                intent = new Intent(Pantalla4.this, Auxiliar.class);
                 backgroundColor = ((ColorDrawable) greenView.getBackground()).getColor();
-                intent.putExtra("backgroundColor", backgroundColor);
-                intent.putExtra("fromActivity", "Pantalla3");
-                startActivity(intent);
+                idColor = 4;
                 break;
 
             case R.id.blueView:
-                intent = new Intent(Pantalla4.this, Auxiliar.class);
                 backgroundColor = ((ColorDrawable) blueView.getBackground()).getColor();
-                intent.putExtra("backgroundColor", backgroundColor);
-                intent.putExtra("fromActivity", "Pantalla3");
-                startActivity(intent);
+                idColor = 5;
                 break;
 
             case R.id.purpleView:
-                intent = new Intent(Pantalla4.this, Auxiliar.class);
                 backgroundColor = ((ColorDrawable) purpleView.getBackground()).getColor();
-                intent.putExtra("backgroundColor", backgroundColor);
-                intent.putExtra("fromActivity", "Pantalla2");
-                startActivity(intent);
+                idColor = 6;
                 break;
 
             case R.id.whiteView:
-                intent = new Intent(Pantalla4.this, Auxiliar.class);
                 backgroundColor = ((ColorDrawable) whiteView.getBackground()).getColor();
-                intent.putExtra("backgroundColor", backgroundColor);
-                intent.putExtra("fromActivity", "Pantalla2");
-                startActivity(intent);
+                idColor = 7;
                 break;
 
             case R.id.grayView:
-                intent = new Intent(Pantalla4.this, Auxiliar.class);
                 backgroundColor = ((ColorDrawable) grayView.getBackground()).getColor();
-                intent.putExtra("backgroundColor", backgroundColor);
-                intent.putExtra("fromActivity", "Pantalla2");
-                startActivity(intent);
+                idColor = 8;
                 break;
 
             case R.id.zaphireView:
-                intent = new Intent(Pantalla3.this, Auxiliar.class);
                 backgroundColor = ((ColorDrawable) zaphireView.getBackground()).getColor();
-                intent.putExtra("backgroundColor", backgroundColor);
-                intent.putExtra("fromActivity", "Pantalla2");
-                startActivity(intent);
+                idColor = 9;
                 break;
+        }
+        intent.putExtra("backgroundColor", backgroundColor);
+        intent.putExtra("fromActivity", "Pantalla4");
+        startActivityForResult(intent, REQUEST_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE) {
+
+            if (resultCode == RESULT_OK) {
+                boolean resultOk = data.getBooleanExtra("resultOk", false);
+                if (resultOk) {
+                    if (idColor == 1){
+                        redView.setVisibility(View.INVISIBLE);
+                    }
+                    else if (idColor == 2){
+                        yellowView.setVisibility(View.INVISIBLE);
+                    }
+                    else if (idColor == 3){
+                        orangeView.setVisibility(View.INVISIBLE);
+                    }
+                    else if (idColor == 4){
+                        greenView.setVisibility(View.INVISIBLE);
+                    }
+                    else if (idColor == 5){
+                        blueView.setVisibility(View.INVISIBLE);
+                    }
+                    else if (idColor == 6){
+                        purpleView.setVisibility(View.INVISIBLE);
+                    }
+                    else if (idColor == 7){
+                        whiteView.setVisibility(View.INVISIBLE);
+                    }
+                    else if (idColor == 8){
+                        grayView.setVisibility(View.INVISIBLE);
+                    }
+                    else if (idColor == 9){
+                        zaphireView.setVisibility(View.INVISIBLE);
+                    }
+                }
+            }
         }
     }
 }

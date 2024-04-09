@@ -1,4 +1,4 @@
-package com.example.ejercicio2_activities;
+package com.example.ejercicio3_activies_v2;
 
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;

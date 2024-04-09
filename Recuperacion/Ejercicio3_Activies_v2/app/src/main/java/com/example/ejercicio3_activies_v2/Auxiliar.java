@@ -1,9 +1,12 @@
-package com.example.ejercicio2_activities;
+package com.example.ejercicio3_activies_v2;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,6 +32,11 @@ public class Auxiliar extends AppCompatActivity {
             case "Pantalla2":
                 findViewById(R.id.btnInicio).setVisibility(View.VISIBLE);
                 break;
+
+            case "Pantalla3":
+                findViewById(R.id.btnInicio).setVisibility(View.VISIBLE);
+                findViewById(R.id.btnFinalizar).setVisibility(View.VISIBLE);
+                break;
         }
     }
 
@@ -46,6 +54,13 @@ public class Auxiliar extends AppCompatActivity {
                 intent = new Intent();
                 intent.putExtra("resultOk", true);
                 setResult(Auxiliar.RESULT_OK, intent);
+                finish();
+                break;
+
+            case R.id.btnFinalizar:
+                intent = new Intent();
+                intent.putExtra("resultCanceled", true);
+                setResult(Auxiliar.RESULT_CANCELED, intent);
                 finish();
                 break;
         }

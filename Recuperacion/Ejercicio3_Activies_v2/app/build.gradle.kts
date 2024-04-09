@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.ejercicio3_activies_v2"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.ejercicio3_activies_v2"

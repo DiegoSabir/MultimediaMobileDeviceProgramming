@@ -34,6 +34,9 @@ public class Auxiliar extends AppCompatActivity {
 
         String fromActivity = getIntent().getStringExtra("fromActivity");
         switch (fromActivity) {
+            case "Pantalla1":
+                break;
+
             case "Pantalla2":
                 findViewById(R.id.btnInicio).setVisibility(View.VISIBLE);
                 break;
@@ -59,10 +62,10 @@ public class Auxiliar extends AppCompatActivity {
                     Toast.makeText(Auxiliar.this, "Me alegro de que te guste", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Intent intent = new Intent(Auxiliar.this, Pantalla4.class);
-                    intent.putExtra("color", backgroundColor);
+                    Intent returnIntent = new Intent();
+                    returnIntent.putExtra("resultOk", true);
+                    setResult(Auxiliar.RESULT_OK, returnIntent);
                     finish();
-                    startActivity(intent);
                 }
             }
         });
@@ -72,17 +75,24 @@ public class Auxiliar extends AppCompatActivity {
         Intent intent;
         switch (view.getId()) {
             case R.id.btnAtras:
+                intent = new Intent();
+                intent.putExtra("resultOk", false);
+                setResult(Auxiliar.RESULT_OK, intent);
                 finish();
                 break;
 
             case R.id.btnInicio:
-                intent = new Intent(Auxiliar.this, MainActivity.class);
+                intent = new Intent();
+                intent.putExtra("resultOk", true);
+                setResult(Auxiliar.RESULT_OK, intent);
                 finish();
-                startActivity(intent);
                 break;
 
             case R.id.btnFinalizar:
-                finishAffinity();
+                intent = new Intent();
+                intent.putExtra("resultOk", true);
+                setResult(Auxiliar.RESULT_CANCELED, intent);
+                finish();
                 break;
         }
     }
@@ -98,5 +108,11 @@ public class Auxiliar extends AppCompatActivity {
             }
         }
     };
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Toast.makeText(this, "El usuario no contesta...", Toast.LENGTH_SHORT).show();
+    }
 }
 

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Pantalla3 extends AppCompatActivity{
     private View redView, yellowView, orangeView, greenView, blueView, purpleView;
+    private static final int REQUEST_CODE = 0;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla3);
@@ -22,57 +23,57 @@ public class Pantalla3 extends AppCompatActivity{
     }
 
     public void onClick(View v) {
-        Intent intent;
-        int backgroundColor;
+        Intent intent = new Intent(Pantalla3.this, Auxiliar.class);
+        int backgroundColor = 0;
 
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.redView:
-                intent = new Intent(Pantalla3.this, Auxiliar.class);
                 backgroundColor = ((ColorDrawable) redView.getBackground()).getColor();
-                intent.putExtra("backgroundColor", backgroundColor);
-                intent.putExtra("fromActivity", "Pantalla3");
-                startActivity(intent);
                 break;
 
             case R.id.yellowView:
-                intent = new Intent(Pantalla3.this, Auxiliar.class);
                 backgroundColor = ((ColorDrawable) yellowView.getBackground()).getColor();
-                intent.putExtra("backgroundColor", backgroundColor);
-                intent.putExtra("fromActivity", "Pantalla3");
-                startActivity(intent);
                 break;
 
             case R.id.orangeView:
-                intent = new Intent(Pantalla3.this, Auxiliar.class);
                 backgroundColor = ((ColorDrawable) orangeView.getBackground()).getColor();
-                intent.putExtra("backgroundColor", backgroundColor);
-                intent.putExtra("fromActivity", "Pantalla3");
-                startActivity(intent);
                 break;
 
             case R.id.greenView:
-                intent = new Intent(Pantalla3.this, Auxiliar.class);
                 backgroundColor = ((ColorDrawable) greenView.getBackground()).getColor();
-                intent.putExtra("backgroundColor", backgroundColor);
-                intent.putExtra("fromActivity", "Pantalla3");
-                startActivity(intent);
                 break;
 
             case R.id.blueView:
-                intent = new Intent(Pantalla3.this, Auxiliar.class);
                 backgroundColor = ((ColorDrawable) blueView.getBackground()).getColor();
-                intent.putExtra("backgroundColor", backgroundColor);
-                intent.putExtra("fromActivity", "Pantalla3");
-                startActivity(intent);
                 break;
 
             case R.id.purpleView:
-                intent = new Intent(Pantalla3.this, Auxiliar.class);
                 backgroundColor = ((ColorDrawable) purpleView.getBackground()).getColor();
-                intent.putExtra("backgroundColor", backgroundColor);
-                intent.putExtra("fromActivity", "Pantalla2");
-                startActivity(intent);
                 break;
+        }
+        intent.putExtra("backgroundColor", backgroundColor);
+        intent.putExtra("fromActivity", "Pantalla3");
+        startActivityForResult(intent, REQUEST_CODE);
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                boolean resultOk = data.getBooleanExtra("resultOk", false);
+                if (resultOk) {
+                    finish();
+                }
+            }
+
+            else if (resultCode == RESULT_CANCELED){
+                Intent intent = new Intent();
+                intent.putExtra("resultCanceled", true);
+                setResult(Auxiliar.RESULT_OK, intent);
+                finish();
+            }
         }
     }
 }

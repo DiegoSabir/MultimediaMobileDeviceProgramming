@@ -1,4 +1,4 @@
-package com.example.ejercicio4_activies_v3;
+package com.example.ejercicio3_activies_v2;
 
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
@@ -69,3 +69,4 @@ public class Pantalla2 extends AppCompatActivity {
         }
     }
 }
+

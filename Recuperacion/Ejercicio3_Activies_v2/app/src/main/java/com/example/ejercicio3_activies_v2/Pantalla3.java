@@ -1,4 +1,4 @@
-package com.example.ejercicio4_activies_v3;
+package com.example.ejercicio3_activies_v2;
 
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
@@ -7,12 +7,12 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Pantalla2 extends AppCompatActivity {
+public class Pantalla3 extends AppCompatActivity{
     private View redView, yellowView, orangeView, greenView, blueView, purpleView;
     private static final int REQUEST_CODE = 0;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantalla2);
+        setContentView(R.layout.activity_pantalla3);
 
         redView = findViewById(R.id.redView);
         yellowView = findViewById(R.id.yellowView);
@@ -23,10 +23,10 @@ public class Pantalla2 extends AppCompatActivity {
     }
 
     public void onClick(View v) {
-        Intent intent = new Intent(Pantalla2.this, Auxiliar.class);
+        Intent intent = new Intent(Pantalla3.this, Auxiliar.class);
         int backgroundColor = 0;
 
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.redView:
                 backgroundColor = ((ColorDrawable) redView.getBackground()).getColor();
                 break;
@@ -52,9 +52,10 @@ public class Pantalla2 extends AppCompatActivity {
                 break;
         }
         intent.putExtra("backgroundColor", backgroundColor);
-        intent.putExtra("fromActivity", "Pantalla2");
+        intent.putExtra("fromActivity", "Pantalla3");
         startActivityForResult(intent, REQUEST_CODE);
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -66,6 +67,14 @@ public class Pantalla2 extends AppCompatActivity {
                     finish();
                 }
             }
+
+            else if (resultCode == RESULT_CANCELED){
+                Intent intent = new Intent();
+                intent.putExtra("resultCanceled", true);
+                setResult(Auxiliar.RESULT_CANCELED, intent);
+                finish();
+            }
         }
     }
 }
+

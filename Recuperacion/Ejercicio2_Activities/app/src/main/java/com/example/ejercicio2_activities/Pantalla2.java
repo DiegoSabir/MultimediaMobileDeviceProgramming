@@ -1,71 +1,71 @@
 package com.example.ejercicio2_activities;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 public class Pantalla2 extends AppCompatActivity {
+    private View redView, yellowView, orangeView, greenView, blueView, purpleView;
+    private static final int REQUEST_CODE = 0;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla2);
 
-        View redView = findViewById(R.id.redView);
-        View yellowView = findViewById(R.id.yellowView);
-        View orangeView = findViewById(R.id.orangeView);
-        View greenView = findViewById(R.id.greenView);
-        View blueView = findViewById(R.id.blueView);
-        View purpleView = findViewById(R.id.purpleView);
-
-        redView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                returnColor(ContextCompat.getColor(getApplicationContext(), R.color.red));
-            }
-        });
-
-        yellowView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                returnColor(ContextCompat.getColor(getApplicationContext(), R.color.yellow));
-            }
-        });
-
-        orangeView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                returnColor(ContextCompat.getColor(getApplicationContext(), R.color.orange));
-            }
-        });
-
-        greenView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                returnColor(ContextCompat.getColor(getApplicationContext(), R.color.green));
-            }
-        });
-
-        blueView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                returnColor(ContextCompat.getColor(getApplicationContext(), R.color.blue));
-            }
-        });
-
-        purpleView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                returnColor(ContextCompat.getColor(getApplicationContext(), R.color.purple));
-            }
-        });
+        redView = findViewById(R.id.redView);
+        yellowView = findViewById(R.id.yellowView);
+        orangeView = findViewById(R.id.orangeView);
+        greenView = findViewById(R.id.greenView);
+        blueView = findViewById(R.id.blueView);
+        purpleView = findViewById(R.id.purpleView);
     }
 
-    private void returnColor(int color) {
+    public void onClick(View v) {
         Intent intent = new Intent(Pantalla2.this, Auxiliar.class);
-        intent.putExtra("color", color);
+        int backgroundColor = 0;
+
+        switch (v.getId()){
+            case R.id.redView:
+                backgroundColor = ((ColorDrawable) redView.getBackground()).getColor();
+                break;
+
+            case R.id.yellowView:
+                backgroundColor = ((ColorDrawable) yellowView.getBackground()).getColor();
+                break;
+
+            case R.id.orangeView:
+                backgroundColor = ((ColorDrawable) orangeView.getBackground()).getColor();
+                break;
+
+            case R.id.greenView:
+                backgroundColor = ((ColorDrawable) greenView.getBackground()).getColor();
+                break;
+
+            case R.id.blueView:
+                backgroundColor = ((ColorDrawable) blueView.getBackground()).getColor();
+                break;
+
+            case R.id.purpleView:
+                backgroundColor = ((ColorDrawable) purpleView.getBackground()).getColor();
+                break;
+        }
+        intent.putExtra("backgroundColor", backgroundColor);
         intent.putExtra("fromActivity", "Pantalla2");
-        startActivity(intent);
+        startActivityForResult(intent, REQUEST_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                boolean resultOk = data.getBooleanExtra("resultOk", false);
+                if (resultOk) {
+                    finish();
+                }
+            }
+        }
     }
 }
