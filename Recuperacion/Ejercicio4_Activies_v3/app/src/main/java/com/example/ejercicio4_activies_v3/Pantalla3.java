@@ -70,12 +70,10 @@ public class Pantalla3 extends AppCompatActivity{
 
             else if (resultCode == RESULT_CANCELED){
                 Intent intent = new Intent();
-                intent.putExtra("resultCanceled", true);
+                intent.putExtra("result", true);
                 setResult(Auxiliar.RESULT_OK, intent);
                 finish();
             }
         }
     }
 }
-
-

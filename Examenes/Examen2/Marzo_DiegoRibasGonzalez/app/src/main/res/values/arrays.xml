@@ -1,0 +1,19 @@
+<resources>
+    <string-array name="nombresQuimicos">
+        <item name="S04H2">Acido sulfurico</item>
+        <item name="H20">Agua</item>
+        <item name="C03CA">Carbonato calcico</item>
+        <item name="C02">Anhidrido carbonico</item>
+        <item name="C0">Monoxido de carbono</item>
+        <item name="0C">Oxido de calcio</item>
+    </string-array>
+
+    <array name="imagenesQuimicos">
+        <item>@drawable/flask1</item>
+        <item>@drawable/flask1</item>
+        <item>@drawable/flask1</item>
+        <item>@drawable/flask1</item>
+        <item>@drawable/flask1</item>
+        <item>@drawable/flask1</item>
+    </array>
+</resources>

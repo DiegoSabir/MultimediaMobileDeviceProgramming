@@ -21,6 +21,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.notificiones.R;
+
+
 import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity {

@@ -1,7 +1,7 @@
 package com.example.ejercicio5_dialog;
 
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Auxiliar extends AppCompatActivity {
@@ -30,15 +31,14 @@ public class Auxiliar extends AppCompatActivity {
         rgOpciones = findViewById(R.id.rgOpciones);
         btnEntendido = findViewById(R.id.btnEntendido);
 
-        // Obtener el color del intent
-        int color = getIntent().getIntExtra("color", Color.WHITE);
+        int backgroundColor = getIntent().getIntExtra("backgroundColor", 0);
+        llOtrosBtn.setBackgroundColor(backgroundColor);
 
-        // Establecer el fondo del LinearLayout principal con el color recibido del intent
-        llOtrosBtn.setBackgroundColor(color);
-
-        // Determinar que mostrar según la actividad de origen
         String fromActivity = getIntent().getStringExtra("fromActivity");
         switch (fromActivity) {
+            case "Pantalla1":
+                break;
+
             case "Pantalla2":
                 findViewById(R.id.btnInicio).setVisibility(View.VISIBLE);
                 break;
@@ -51,7 +51,7 @@ public class Auxiliar extends AppCompatActivity {
             case "Pantalla4":
                 findViewById(R.id.llOtrosBtn).setVisibility(View.GONE);
                 findViewById(R.id.llRadioGroup).setVisibility(View.VISIBLE);
-                colorView.setBackgroundColor(color);
+                colorView.setBackgroundColor(backgroundColor);
                 break;
         }
 
@@ -64,10 +64,10 @@ public class Auxiliar extends AppCompatActivity {
                     Toast.makeText(Auxiliar.this, "Me alegro de que te guste", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    Intent intent = new Intent(Auxiliar.this, Pantalla4.class);
-                    intent.putExtra("color", color);
+                    Intent returnIntent = new Intent();
+                    returnIntent.putExtra("resultOk", true);
+                    setResult(Auxiliar.RESULT_OK, returnIntent);
                     finish();
-                    startActivity(intent);
                 }
             }
         });
@@ -77,17 +77,21 @@ public class Auxiliar extends AppCompatActivity {
         Intent intent;
         switch (view.getId()) {
             case R.id.btnAtras:
+                intent = new Intent();
+                intent.putExtra("resultOk", false);
+                setResult(Auxiliar.RESULT_OK, intent);
                 finish();
                 break;
 
             case R.id.btnInicio:
-                intent = new Intent(Auxiliar.this, MainActivity.class);
-                finishAffinity();
-                startActivity(intent);
+                intent = new Intent();
+                intent.putExtra("resultOk", true);
+                setResult(Auxiliar.RESULT_OK, intent);
+                finish();
                 break;
 
             case R.id.btnFinalizar:
-                finishAffinity(); // Esto finaliza todas las actividades de la aplicación
+                dialogBtnFinalizar();
                 break;
         }
     }
@@ -103,4 +107,33 @@ public class Auxiliar extends AppCompatActivity {
             }
         }
     };
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Toast.makeText(this, "El usuario no contesta...", Toast.LENGTH_SHORT).show();
+    }
+
+    private void dialogBtnFinalizar() {
+        AlertDialog ventana = new AlertDialog.Builder(this)
+                .setIcon(R.drawable.colors_icon)
+                .setMessage("La app se va a cerrar\nEsta seguro?")
+                .setTitle("CIERRE DE APP!")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intentCerrarApp = new Intent();
+                        intentCerrarApp.putExtra("resultOk", true);
+                        setResult(Auxiliar.RESULT_CANCELED, intentCerrarApp);
+                        finish();
+                    }
+                })
+                .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                })
+                .show();
+    }
 }

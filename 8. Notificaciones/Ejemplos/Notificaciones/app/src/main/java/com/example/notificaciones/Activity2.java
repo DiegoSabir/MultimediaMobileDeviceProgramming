@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.notificiones.R;
+
 public class Activity2 extends AppCompatActivity {
 
     @Override

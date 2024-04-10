@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Learn Chemistry</string>
+    <string name="strOpc2">Insertar compuesto</string>
+    <string name="strOpc1">Contacto</string>
+    <string name="enlace">www.formulacionquimica.com</string>
+</resources>

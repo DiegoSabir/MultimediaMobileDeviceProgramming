@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.ejercicio5_dialog"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.ejercicio5_dialog"
