@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/ctx_bienvenido_opc1" android:title="Mostrar fondo 4 botones"/>
+
+    <item android:id="@+id/ctx_bienvenido_opc2" android:title="Mostrar fondo 6 botones"/>
+
+    <item android:id="@+id/ctx_bienvenido_opc3" android:title="Mostrar fondo 9 botones"/>
+
+</menu>

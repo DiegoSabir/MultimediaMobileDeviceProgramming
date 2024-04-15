@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout llBtnPantallas;
     private Button btnPantalla1, btnPantalla2, btnPantalla3, btnPantalla4;
     private static final int REQUEST_CODE = 0;
+    int mensageDialog = 0;
+    int tituloDialog = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
         btnPantalla1.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                dialogPantalla1();
+                mensageDialog = R.string.DialogBtnPantalla1;
+                tituloDialog = R.string.DialogTitleBtnPantalla1;
+                mostrarDialog(mensageDialog, tituloDialog);
                 return false;
             }
         });
@@ -39,7 +43,9 @@ public class MainActivity extends AppCompatActivity {
         btnPantalla2.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                dialogPantalla2();
+                mensageDialog = R.string.DialogBtnPantalla2;
+                tituloDialog = R.string.DialogTitleBtnPantalla2;
+                mostrarDialog(mensageDialog, tituloDialog);
                 return false;
             }
         });
@@ -47,7 +53,9 @@ public class MainActivity extends AppCompatActivity {
         btnPantalla3.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                dialogPantalla3();
+                mensageDialog = R.string.DialogBtnPantalla3;
+                tituloDialog = R.string.DialogTitleBtnPantalla3;
+                mostrarDialog(mensageDialog, tituloDialog);
                 return false;
             }
         });
@@ -55,7 +63,9 @@ public class MainActivity extends AppCompatActivity {
         btnPantalla4.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                dialogPantalla4();
+                mensageDialog = R.string.DialogBtnPantalla4;
+                tituloDialog = R.string.DialogTitleBtnPantalla4;
+                mostrarDialog(mensageDialog, tituloDialog);
                 return false;
             }
         });
@@ -96,36 +106,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void dialogPantalla1() {
+    private void mostrarDialog(int mensageDialog, int tituloDialog) {
         AlertDialog.Builder ventana = new AlertDialog.Builder(this);
         ventana.setIcon(R.drawable.colors_icon)
-                .setMessage("Pantalla con 4 colores\nCada color lleva a una pantalla con retroceso")
-                .setTitle("Pantalla 1")
+                .setMessage(mensageDialog)
+                .setTitle(tituloDialog)
                 .show();
     }
-
-    private void dialogPantalla2() {
-        AlertDialog.Builder ventana = new AlertDialog.Builder(this);
-        ventana.setIcon(R.drawable.colors_icon)
-                .setMessage("Pantalla con 6 colores\nCada color lleva a una pantalla con retroceso o vuelta al inicio")
-                .setTitle("Pantalla 2")
-                .show();
-    }
-
-    private void dialogPantalla3() {
-        AlertDialog.Builder ventana = new AlertDialog.Builder(this);
-        ventana.setIcon(R.drawable.colors_icon)
-                .setMessage("Pantalla con 6 colores y padding\nCada color lleva a una pantalla con retroceso, vuelta al inicio o fin de app")
-                .setTitle("Pantalla 3")
-                .show();
-    }
-
-    private void dialogPantalla4() {
-        AlertDialog.Builder ventana = new AlertDialog.Builder(this);
-        ventana.setIcon(R.drawable.colors_icon)
-                .setMessage("Pantalla con 9 colores\nCada color lleva a una pantalla que permite eliminar dicho color")
-                .setTitle("Pantalla 4")
-                .show();
-    }
-
 }

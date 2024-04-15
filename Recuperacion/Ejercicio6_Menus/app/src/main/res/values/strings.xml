@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ejercicio5_Dialog</string>
+    <string name="app_name">Ejercicio6_Menus</string>
     <string name="DialogTitleBtnPantalla1">Pantalla 1</string>
     <string name="DialogBtnPantalla1">Pantalla con 4 colores\nCada color lleva a una pantalla con retroceso</string>
     <string name="DialogTitleBtnPantalla2">Pantalla 2</string>
