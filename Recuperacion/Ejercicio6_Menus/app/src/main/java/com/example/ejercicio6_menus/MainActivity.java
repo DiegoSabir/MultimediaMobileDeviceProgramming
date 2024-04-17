@@ -15,8 +15,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView tvBievenido, tvJugamos;
     LinearLayout llBackground;
+    private TextView tvBievenido, tvJugamos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,15 +48,15 @@ public class MainActivity extends AppCompatActivity {
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.ctx_bienvenido_opc1:
-                llBackground.setBackgroundResource(R.drawable.colores);
+                llBackground.setBackgroundResource(R.drawable.cuatro_colores);
                 return true;
 
             case R.id.ctx_bienvenido_opc2:
-                llBackground.setBackgroundResource(R.drawable.coloresdos);
+                llBackground.setBackgroundResource(R.drawable.seis_colores);
                 return true;
 
             case R.id.ctx_bienvenido_opc3:
-                llBackground.setBackgroundResource(R.drawable.colorestres);
+                llBackground.setBackgroundResource(R.drawable.nueve_colores);
                 return true;
 
             case R.id.ctx_jugamos_opc1:
@@ -115,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setTitle("CIERRE DE APP")
                 .setMessage("¿La app se va a cerrar\n¿Está seguro?")
-                .setIcon(R.drawable.colores)
+                .setIcon(R.drawable.cuatro_colores)
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
