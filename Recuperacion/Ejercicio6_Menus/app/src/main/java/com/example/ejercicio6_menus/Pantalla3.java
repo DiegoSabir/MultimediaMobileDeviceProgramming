@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Pantalla3 extends MenuActivity{
     private View redView, yellowView, orangeView, greenView, blueView, purpleView;
-    private static final int REQUEST_CODE = 0;
+    private static final int REQUEST_CODE = 1;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla3);
@@ -68,10 +68,10 @@ public class Pantalla3 extends MenuActivity{
                 }
             }
 
-            else if (resultCode == RESULT_CANCELED){
-                Intent intent = new Intent();
-                intent.putExtra("result", true);
-                setResult(Auxiliar.RESULT_OK, intent);
+            else if (resultCode == 4) {
+                Intent returnIntent = new Intent();
+                returnIntent.putExtra("salida", true);
+                setResult(4, returnIntent);
                 finish();
             }
         }

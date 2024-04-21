@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Pantalla2 extends MenuActivity {
     private View redView, yellowView, orangeView, greenView, blueView, purpleView;
-    private static final int REQUEST_CODE = 0;
+    private static final int REQUEST_CODE = 1;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantalla2);
@@ -62,7 +62,7 @@ public class Pantalla2 extends MenuActivity {
         if (requestCode == REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
                 boolean resultOk = data.getBooleanExtra("resultOk", false);
-                if (resultOk) {
+                if (resultOk==true) {
                     finish();
                 }
             }

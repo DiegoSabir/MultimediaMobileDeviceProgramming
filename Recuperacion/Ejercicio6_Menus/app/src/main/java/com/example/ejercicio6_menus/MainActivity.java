@@ -17,6 +17,7 @@ import android.widget.TextView;
 public class MainActivity extends MenuActivity {
     LinearLayout llBackground;
     private TextView tvBievenido, tvJugamos;
+    private static final int REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,69 +67,21 @@ public class MainActivity extends MenuActivity {
             case R.id.ctx_jugamos_opc2:
                 llBackground.setBackgroundColor(getResources().getColor(R.color.black));
                 return true;
-
-            default:
-                return super.onContextItemSelected(item);
         }
+        return super.onContextItemSelected(item);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent;
-        switch (item.getItemId()) {
-            case R.id.opc_pantalla1:
-                intent = new Intent(this, Pantalla1.class);
-                startActivity(intent);
-                return true;
-
-            case R.id.opc_pantalla2:
-                intent = new Intent(this, Pantalla2.class);
-                startActivity(intent);
-                return true;
-
-            case R.id.opc_pantalla3:
-                intent = new Intent(this, Pantalla3.class);
-                startActivity(intent);
-                return true;
-
-            case R.id.opc_pantalla4:
-                intent = new Intent(this, Pantalla4.class);
-                startActivity(intent);
-                return true;
-
-            case R.id.opc_finalizar:
-                showDialogWithOptions();
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == 4) {
+                boolean resultOk = data.getBooleanExtra("salida", false);
+                if (resultOk) {
+                    finish();
+                }
+            }
         }
     }
 
-
-    private void showDialogWithOptions() {
-        new AlertDialog.Builder(this)
-                .setTitle("CIERRE DE APP")
-                .setMessage("¿La app se va a cerrar\n¿Está seguro?")
-                .setIcon(R.drawable.cuatro_colores)
-                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
-                    }
-                })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                })
-                .show();
-    }
 }
