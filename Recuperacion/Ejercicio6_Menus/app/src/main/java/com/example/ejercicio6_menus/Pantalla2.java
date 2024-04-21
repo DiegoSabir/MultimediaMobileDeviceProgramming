@@ -7,7 +7,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Pantalla2 extends AppCompatActivity {
+public class Pantalla2 extends MenuActivity {
     private View redView, yellowView, orangeView, greenView, blueView, purpleView;
     private static final int REQUEST_CODE = 0;
     protected void onCreate(Bundle savedInstanceState) {

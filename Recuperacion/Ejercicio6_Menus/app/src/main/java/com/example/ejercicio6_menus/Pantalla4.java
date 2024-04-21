@@ -7,7 +7,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Pantalla4 extends AppCompatActivity {
+public class Pantalla4 extends MenuActivity {
     private View redView, yellowView, orangeView, greenView, blueView, purpleView, whiteView, grayView, zaphireView;
     private static final int REQUEST_CODE = 0;
     int idColor;

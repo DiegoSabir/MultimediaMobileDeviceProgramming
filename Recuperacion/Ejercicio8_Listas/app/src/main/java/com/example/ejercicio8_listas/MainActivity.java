@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         //Asignar el adaptador a la vista
         lvPaddings.setAdapter(adaptador);
 
-
         //Escuchador
         lvPantallas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

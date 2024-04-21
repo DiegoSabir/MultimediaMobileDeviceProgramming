@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends MenuActivity {
     LinearLayout llBackground;
     private TextView tvBievenido, tvJugamos;
 

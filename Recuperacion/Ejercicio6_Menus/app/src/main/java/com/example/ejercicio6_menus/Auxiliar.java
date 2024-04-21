@@ -12,7 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Auxiliar extends AppCompatActivity {
+public class Auxiliar extends MenuActivity {
     boolean rbSi = true;
     private LinearLayout llOtrosBtn, llRadioGroup;
     private RadioGroup rgOpciones;
