@@ -62,7 +62,7 @@ public class Pantalla2 extends MenuActivity {
         if (requestCode == REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
                 boolean resultOk = data.getBooleanExtra("resultOk", false);
-                if (resultOk==true) {
+                if (resultOk) {
                     finish();
                 }
             }

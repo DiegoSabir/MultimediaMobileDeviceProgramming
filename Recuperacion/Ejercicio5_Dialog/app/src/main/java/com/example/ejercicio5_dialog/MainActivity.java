@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private LinearLayout llBtnPantallas;
     private Button btnPantalla1, btnPantalla2, btnPantalla3, btnPantalla4;
-    private static final int REQUEST_CODE = 0;
+    private static final int REQUEST_CODE = 1;
     int mensageDialog = 0;
     int tituloDialog = 0;
 
@@ -93,24 +93,24 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, REQUEST_CODE);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_CODE) {
-            if (resultCode == RESULT_OK) {
-                boolean result = data.getBooleanExtra("result", false);
-                if (result) {
-                    finish();
-                }
-            }
-        }
-    }
-
     private void mostrarDialog(int mensageDialog, int tituloDialog) {
         AlertDialog.Builder ventana = new AlertDialog.Builder(this);
         ventana.setIcon(R.drawable.colors_icon)
                 .setMessage(mensageDialog)
                 .setTitle(tituloDialog)
                 .show();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == 4) {
+                boolean resultOk = data.getBooleanExtra("salida", false);
+                if (resultOk) {
+                    finish();
+                }
+            }
+        }
     }
 }

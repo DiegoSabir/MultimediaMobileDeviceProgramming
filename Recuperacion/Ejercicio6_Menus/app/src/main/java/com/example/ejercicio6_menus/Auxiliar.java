@@ -122,9 +122,9 @@ public class Auxiliar extends MenuActivity {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Intent returnIntentfinis = new Intent();
-                        returnIntentfinis.putExtra("resultOK", true);
-                        setResult(4, returnIntentfinis);
+                        Intent intentFinish = new Intent();
+                        intentFinish.putExtra("resultOK", true);
+                        setResult(4, intentFinish);
                         finish();
                     }
                 })

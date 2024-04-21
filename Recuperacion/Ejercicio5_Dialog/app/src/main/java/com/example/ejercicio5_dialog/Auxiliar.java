@@ -91,7 +91,7 @@ public class Auxiliar extends AppCompatActivity {
                 break;
 
             case R.id.btnFinalizar:
-                dialogBtnFinalizar();
+                showDialogWithOptions();
                 break;
         }
     }
@@ -114,24 +114,24 @@ public class Auxiliar extends AppCompatActivity {
         Toast.makeText(this, "El usuario no contesta...", Toast.LENGTH_SHORT).show();
     }
 
-    private void dialogBtnFinalizar() {
-        AlertDialog ventana = new AlertDialog.Builder(this)
-                .setIcon(R.drawable.colors_icon)
-                .setMessage("La app se va a cerrar\nEsta seguro?")
+    private void showDialogWithOptions() {
+        new AlertDialog.Builder(this)
                 .setTitle("CIERRE DE APP!")
+                .setMessage("La app se va a cerrar\nEsta seguro?")
+                .setIcon(R.drawable.colors_icon)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Intent intentCerrarApp = new Intent();
-                        intentCerrarApp.putExtra("resultOk", true);
-                        setResult(Auxiliar.RESULT_CANCELED, intentCerrarApp);
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intentFinish = new Intent();
+                        intentFinish.putExtra("resultOK", true);
+                        setResult(4, intentFinish);
                         finish();
                     }
                 })
                 .setNegativeButton("NO", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
                     }
                 })
                 .show();
