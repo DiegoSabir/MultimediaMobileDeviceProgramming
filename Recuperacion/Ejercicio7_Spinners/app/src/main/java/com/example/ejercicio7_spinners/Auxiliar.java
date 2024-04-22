@@ -1,5 +1,6 @@
 package com.example.ejercicio7_spinners;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Auxiliar extends AppCompatActivity {
@@ -89,10 +91,7 @@ public class Auxiliar extends AppCompatActivity {
                 break;
 
             case R.id.btnFinalizar:
-                intent = new Intent();
-                intent.putExtra("resultOk", true);
-                setResult(Auxiliar.RESULT_CANCELED, intent);
-                finish();
+                showDialogWithOptions();
                 break;
         }
     }
@@ -113,6 +112,29 @@ public class Auxiliar extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         Toast.makeText(this, "El usuario no contesta...", Toast.LENGTH_SHORT).show();
+    }
+
+    private void showDialogWithOptions() {
+        new AlertDialog.Builder(this)
+                .setTitle("CIERRE DE APP!")
+                .setMessage("La app se va a cerrar\nEsta seguro?")
+                .setIcon(R.drawable.colors_icon)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intentFinish = new Intent();
+                        intentFinish.putExtra("resultOK", true);
+                        setResult(4, intentFinish);
+                        finish();
+                    }
+                })
+                .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                })
+                .show();
     }
 }
 

@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Pantalla4 extends AppCompatActivity {
     private View redView, yellowView, orangeView, greenView, blueView, purpleView, whiteView, grayView, zaphireView;
-    private static final int REQUEST_CODE = 0;
+    private static final int REQUEST_CODE = 1;
     int idColor;
 
     protected void onCreate(Bundle savedInstanceState) {
