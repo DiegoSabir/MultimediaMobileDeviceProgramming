@@ -1,13 +1,19 @@
 package com.example.ejercicio8_listas;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
+    private static final int REQUEST_CODE = 1;
     private ListView lvPantallas, lvPaddings;
+
+    ArrayAdapter<CharSequence> adaptador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,23 +24,65 @@ public class MainActivity extends AppCompatActivity {
         lvPantallas = findViewById(R.id.lvPantallas);
         lvPaddings = findViewById(R.id.lvPaddings);
 
-        //Crear instancia del adaptador personalizado
-        Adaptador adaptador = new Adaptador(this, R.layout.lista,
-                getResources().getStringArray(R.array.paddings));
-
-        //Asignar el adaptador a la vista
+        adaptador = ArrayAdapter.createFromResource(this, R.array.paddings, android.R.layout.simple_list_item_1);
         lvPaddings.setAdapter(adaptador);
 
-        //Escuchador
         lvPantallas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String selectedOption = (String) adapterView.getItemAtPosition(i);
-                if (selectedOption.equals("6 colores")) {
-                    lvPaddings.setVisibility(View.VISIBLE);
-                    lvPantallas.setVisibility(View.GONE);
+                String opcionPantalla = (String) adapterView.getItemAtPosition(i);
+                Intent intent = null;
+                switch (opcionPantalla) {
+                    case "4 colores":
+                        intent = new Intent(MainActivity.this, Pantalla1.class);
+                        break;
+
+                    case "6 colores":
+                        lvPaddings.setVisibility(View.VISIBLE);
+                        lvPantallas.setVisibility(View.GONE);
+                        break;
+
+                    case "9 colores":
+                        intent = new Intent(MainActivity.this, Pantalla4.class);
+                        break;
+                }
+                if (intent != null) {
+                    startActivityForResult(intent, REQUEST_CODE);
                 }
             }
         });
+
+        lvPaddings.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String opcionPadding = (String) adapterView.getItemAtPosition(i);
+                Intent intent = null;
+                switch (opcionPadding) {
+                    case "Sin padding":
+                        intent = new Intent(MainActivity.this, Pantalla2.class);
+                        break;
+
+                    case "Con padding":
+                        intent = new Intent(MainActivity.this, Pantalla3.class);
+                        break;
+                }
+                startActivityForResult(intent, REQUEST_CODE);
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == 4) {
+                boolean resultOk = data.getBooleanExtra("salida", false);
+                if (resultOk) {
+                    lvPantallas.setVisibility(View.VISIBLE);
+                    lvPaddings.setVisibility(View.GONE);
+                    finish();
+                }
+            }
+        }
     }
 }

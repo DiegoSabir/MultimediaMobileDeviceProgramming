@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     private String pantalla, padding;
     private static final int REQUEST_CODE = 1;
     private Button btnAdelante;
+    private String[] arrayPaddings;
+    private ArrayAdapter<String> adaptador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,12 @@ public class MainActivity extends AppCompatActivity {
         spPadding = findViewById(R.id.spPadding);
 
         btnAdelante = findViewById(R.id.btnAdelante);
+
+        // Configuración del spinner sin entries
+        arrayPaddings= getResources().getStringArray(R.array.paddings);
+        adaptador = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, arrayPaddings);
+        adaptador.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spPadding.setAdapter(adaptador);
 
         spPantallas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -62,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String pantallaSeleccionada = spPantallas.getSelectedItem().toString();
+                String paddingSeleccionado = spPadding.getSelectedItem().toString();
 
                 Intent intent = null;
                 switch (pantallaSeleccionada) {
@@ -70,7 +79,12 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case "6 colores":
-                        intent = new Intent(MainActivity.this, Pantalla3.class);
+                        if (paddingSeleccionado.equals("Sin padding")){
+                            intent = new Intent(MainActivity.this, Pantalla2.class);
+                        }
+                        else if (paddingSeleccionado.equals("Con padding")){
+                            intent = new Intent(MainActivity.this, Pantalla3.class);
+                        }
                         break;
 
                     case "9 colores":
