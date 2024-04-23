@@ -78,8 +78,6 @@ public class MainActivity extends AppCompatActivity {
             if (resultCode == 4) {
                 boolean resultOk = data.getBooleanExtra("salida", false);
                 if (resultOk) {
-                    lvPantallas.setVisibility(View.VISIBLE);
-                    lvPaddings.setVisibility(View.GONE);
                     finish();
                 }
             }

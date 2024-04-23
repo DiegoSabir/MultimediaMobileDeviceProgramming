@@ -21,6 +21,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Pantalla1"
+            android:exported="false" >
+        </activity>
+        <activity
+            android:name=".Pantalla2"
+            android:exported="false" >
+        </activity>
+        <activity
+            android:name=".Pantalla3"
+            android:exported="false" >
+        </activity>
+        <activity
+            android:name=".Pantalla4"
+            android:exported="false" >
+        </activity>
+        <activity
+            android:name=".Auxiliar"
+            android:exported="false" >
+        </activity>
     </application>
 
 </manifest>

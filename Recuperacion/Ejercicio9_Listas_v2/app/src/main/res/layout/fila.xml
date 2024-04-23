@@ -5,8 +5,8 @@
     android:layout_height="match_parent"
     android:padding="15dp">
 
+    <!--la imagen se carga dinamicamente mediante el adaptador -->
     <ImageView
-        android:id="@+id/ivFila"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_gravity="center"
@@ -14,16 +14,16 @@
         android:src="@drawable/cuatro_colores"/>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tvTituloFila"
+            android:id="@+id/tvOpcionFila"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:textSize="30sp"/>
+            android:textSize="25sp" />
 
     </LinearLayout>
 
