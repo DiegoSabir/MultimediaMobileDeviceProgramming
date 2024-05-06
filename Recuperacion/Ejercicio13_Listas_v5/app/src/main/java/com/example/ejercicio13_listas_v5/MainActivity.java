@@ -1,8 +1,9 @@
-package com.example.ejercicio11_12_listas_v4;
+package com.example.ejercicio13_listas_v5;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,8 +16,9 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE = 1;
     private ListView lvPantallas, lvPaddings;
     private ArrayList<Pantalla> arrayPantallas = new ArrayList<>();
+    private ArrayList<Padding> arrayPaddings = new ArrayList<>();
     Adaptador adaptadorPantalla;
-    ArrayAdapter<String> adaptadorPaddings;
+    AdaptadorPadding adaptador_Padding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +40,17 @@ public class MainActivity extends AppCompatActivity {
         String[] tvOpcionFila = getResources().getStringArray(R.array.pantallas);
         String[] tvInformacionFila = getResources().getStringArray(R.array.informacion_pantallas);
         String[] tvNumerosColoresFila = getResources().getStringArray(R.array.numero_colores);
+        TypedArray arrayImagenPantallaFila = getResources().obtainTypedArray(R.array.imgPantallas);
 
         for (int i = 0; i < tvOpcionFila.length; i++){
-            arrayPantallas.add(new Pantalla(tvOpcionFila[i], tvInformacionFila[i], tvNumerosColoresFila[i]));
+            arrayPantallas.add(new Pantalla(tvOpcionFila[i], tvInformacionFila[i], tvNumerosColoresFila[i], arrayImagenPantallaFila.getResourceId(i,-1)));
+        }
+
+        String[] tvOpcionPaddingFila = getResources().getStringArray(R.array.paddings);
+        TypedArray arrayImagenPaddingFila = getResources().obtainTypedArray(R.array.imgPaddings);
+
+        for (int i = 0; i < tvOpcionPaddingFila.length; i++){
+            arrayPaddings.add(new Padding(tvOpcionPaddingFila[i], arrayImagenPaddingFila.getResourceId(i,-1)));
         }
     }
 
@@ -48,11 +58,8 @@ public class MainActivity extends AppCompatActivity {
         adaptadorPantalla = new Adaptador(this, R.layout.fila, arrayPantallas);
         lvPantallas.setAdapter(adaptadorPantalla);
 
-        adaptadorPaddings = new ArrayAdapter<String>(this,
-                R.layout.fila_paddings,
-                R.id.tvOpcionFila,
-                getResources().getStringArray(R.array.paddings));
-        lvPaddings.setAdapter(adaptadorPaddings);
+        adaptador_Padding = new AdaptadorPadding(this, R.layout.fila_paddings, arrayPaddings);
+        lvPaddings.setAdapter(adaptador_Padding);
     }
 
     private void clickListenerLv() {
@@ -85,7 +92,8 @@ public class MainActivity extends AppCompatActivity {
         lvPaddings.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String opcionPadding = (String) adapterView.getItemAtPosition(i);
+                Padding paddingSeleccionado = arrayPaddings.get(i);
+                String opcionPadding = paddingSeleccionado.getOpcionPaddingFila();
                 Intent intent = null;
                 switch (opcionPadding) {
                     case "Sin padding":
@@ -100,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
