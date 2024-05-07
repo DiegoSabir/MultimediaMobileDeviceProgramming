@@ -1,8 +1,10 @@
 package com.example.ejercicio14_repaso;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuInflater;
@@ -65,8 +67,10 @@ public class MainActivity extends AppCompatActivity {
         lvAlumnos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Cuando se hace clic en un elemento de la lista, se muestra un mensaje emergente (Toast) con la información del alumno seleccionado.
-                Toast.makeText(MainActivity.this, arrayAlumnos.get(position).toString(), Toast.LENGTH_SHORT).show();
+                Alumno alumno = arrayAlumnos.get(position);
+                String mensajeDialog = alumno.toString();
+                String tituloDialog = "Informacion del alumno";
+                mostrarDialog(mensajeDialog, tituloDialog);
             }
         });
     }
@@ -161,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
         nombre = etNombreApellidos.getText().toString();
         arrayAlumnos.add(new Alumno(nombre, curso, ciclo));
         adaptador.notifyDataSetChanged();
+        etNombreApellidos.setText("");
     }
 
     private boolean comprobarEdit() {
@@ -173,4 +178,19 @@ public class MainActivity extends AppCompatActivity {
         }
         return nombreValido;
     }
+
+    private void mostrarDialog(String mensajeDialog, String tituloDialog) {
+        AlertDialog.Builder ventana = new AlertDialog.Builder(this);
+        ventana.setMessage(mensajeDialog)
+                .setTitle(tituloDialog)
+                .setPositiveButton("Cerrar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
+    }
+
+
 }
