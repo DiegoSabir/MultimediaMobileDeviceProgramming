@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.ContextMenu;
 import android.view.MenuInflater;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -70,7 +72,11 @@ public class MainActivity extends AppCompatActivity {
                 Alumno alumno = arrayAlumnos.get(position);
                 String mensajeDialog = alumno.toString();
                 String tituloDialog = "Informacion del alumno";
-                mostrarDialog(mensajeDialog, tituloDialog);
+
+                ImageView ivAlumnoCurso = view.findViewById(R.id.ivAlumnoCurso);
+                Drawable icono = ivAlumnoCurso.getDrawable();
+
+                mostrarDialog(mensajeDialog, tituloDialog, icono);
             }
         });
     }
@@ -179,10 +185,11 @@ public class MainActivity extends AppCompatActivity {
         return nombreValido;
     }
 
-    private void mostrarDialog(String mensajeDialog, String tituloDialog) {
+    private void mostrarDialog(String mensajeDialog, String tituloDialog, Drawable icono) {
         AlertDialog.Builder ventana = new AlertDialog.Builder(this);
         ventana.setMessage(mensajeDialog)
                 .setTitle(tituloDialog)
+                .setIcon(icono)
                 .setPositiveButton("Cerrar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -191,6 +198,4 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .show();
     }
-
-
 }

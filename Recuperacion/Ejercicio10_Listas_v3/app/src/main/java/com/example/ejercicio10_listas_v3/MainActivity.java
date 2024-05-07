@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 getResources().getStringArray(R.array.numero_colores));
 
         adaptadorPaddings = new ArrayAdapter<String>(this,
-                R.layout.fila,
+                R.layout.fila_paddings,
                 R.id.tvOpcionFila,
                 getResources().getStringArray(R.array.paddings));
 

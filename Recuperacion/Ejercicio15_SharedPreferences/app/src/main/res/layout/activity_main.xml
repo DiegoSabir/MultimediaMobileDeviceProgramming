@@ -8,10 +8,12 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/llSharedPreferences"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_margin="40dp">
+        android:gravity="center"
+        android:visibility="visible">
 
         <TextView
             android:layout_width="wrap_content"
@@ -21,6 +23,38 @@
             android:textSize="30sp"
             android:textStyle="bold"
             android:padding="15dp"/>
+
+        <EditText
+            android:id="@+id/etUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"
+            android:inputType="textCapCharacters"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <CheckBox
+            android:id="@+id/chkRecordar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recordar nombre"/>
+
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:onClick="onClickBtn"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llListViews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="40dp"
+        android:visibility="gone">
 
         <ListView
             android:id="@+id/lvPantallas"
