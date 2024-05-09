@@ -66,6 +66,11 @@ public class MainActivity extends AppCompatActivity {
             editor.apply();
             Toast.makeText(this, "Los datos se han guardado", Toast.LENGTH_SHORT).show();
         }
+        else {
+            SharedPreferences.Editor editor = preferencia.edit();
+            editor.remove("nombreUsuario");
+            editor.apply();
+        }
         llSharedPreferences.setVisibility(View.GONE);
         llListViews.setVisibility(View.VISIBLE);
     }
