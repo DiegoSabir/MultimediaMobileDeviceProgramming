@@ -1,27 +1,50 @@
 package com.example.ejercicio17_basededatosexterna;
 
-import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class DataBaseHelper extends SQLiteAssetHelper {
     private static final String DATABASE_NAME = "bbdd.db";
     private static final int DATABASE_VERSION = 1;
+    private static final String COLUMN_NOMBRE = "nombre";
+    private static final String COLUMN_EMAIL = "email";
+    private final Context context;
 
     public DataBaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        this.context = context;
     }
 
-    // No necesitamos sobrescribir onCreate() ni onUpgrade() ya que la base de datos ya está creada
-    // y no necesitamos gestionar actualizaciones en este caso.
+    @Override
+    public synchronized SQLiteDatabase getReadableDatabase() {
+        return super.getReadableDatabase();
+    }
 
-    // Método para obtener una instancia de la base de datos en modo escritura
-    public SQLiteDatabase getWritableDatabase() {
+    @Override
+    public synchronized SQLiteDatabase getWritableDatabase() {
         return super.getWritableDatabase();
     }
 
-    // Método para obtener una instancia de la base de datos en modo lectura
-    public SQLiteDatabase getReadableDatabase() {
-        return super.getReadableDatabase();
+    public String buscarEmailPorNombre(String nombre) {
+        SQLiteDatabase db = getReadableDatabase();
+        String email = null;
+
+        Cursor cursor = db.rawQuery("SELECT email FROM alumnos WHERE nombre=?", new String[]{nombre});
+
+        if (cursor.moveToFirst()) {
+            email = cursor.getString(cursor.getColumnIndex(COLUMN_EMAIL));
+        }
+
+        cursor.close();
+        db.close();
+
+        return email;
     }
 }

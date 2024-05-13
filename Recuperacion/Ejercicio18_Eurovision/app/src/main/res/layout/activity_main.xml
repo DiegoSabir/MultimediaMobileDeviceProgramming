@@ -4,17 +4,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cyan"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/btnVerDatos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="VER DATOS DEL FESTIVAL"/>
-    
+        android:text="VER DATOS DEL FESTIVAL"
+        android:onClick="onClick"/>
+
     <ListView
-        android:layout_width=""
-        android:layout_height=""
-    
+        android:id="@+id/lvDatos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/blue"
+        android:dividerHeight="2dp"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/lvDatosTotalPais"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/blue"
+        android:dividerHeight="2dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/llAutoComplete"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Elige un pais"
+            android:textColor="@color/blue"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <AutoCompleteTextView
+            android:id="@+id/actvPaises"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Pais"
+            android:textColor="@color/blue"
+            android:textSize="20sp"
+            android:textStyle="italic|bold" />
+
+        <ListView
+            android:id="@+id/lvDatosPaises"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@color/blue"
+            android:dividerHeight="2dp"
+            android:background="@color/pink"/>
+
+    </LinearLayout>
 
 </LinearLayout>
