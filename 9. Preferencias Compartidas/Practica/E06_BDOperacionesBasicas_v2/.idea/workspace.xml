@@ -10,22 +10,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d1c48d1-f393-434c-98b7-ec0397062d33" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../E03_PreferenciasCompartidas_v3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../E03_PreferenciasCompartidas_v3/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Recuperacion/Ejercicio16_Repaso_v2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Recuperacion/Ejercicio16_Repaso_v2/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Recuperacion/Ejercicio16_Repaso_v2/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Recuperacion/Ejercicio16_Repaso_v2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Recuperacion/Ejercicio16_Repaso_v2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Recuperacion/Ejercicio16_Repaso_v2/app/src/main/java/com/example/ejercicio16_repaso_v2/AdaptadorAlumno.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Recuperacion/Ejercicio16_Repaso_v2/app/src/main/java/com/example/ejercicio16_repaso_v2/Alumno.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Recuperacion/Ejercicio16_Repaso_v2/app/src/main/java/com/example/ejercicio16_repaso_v2/BaseDeDatos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Recuperacion/Ejercicio16_Repaso_v2/app/src/main/java/com/example/ejercicio16_repaso_v2/MainActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Recuperacion/Ejercicio16_Repaso_v2/app/src/main/res/drawable/bach.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Recuperacion/Ejercicio16_Repaso_v2/app/src/main/res/drawable/ciclo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Recuperacion/Ejercicio16_Repaso_v2/app/src/main/res/drawable/eso.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Recuperacion/Ejercicio16_Repaso_v2/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Recuperacion/Ejercicio16_Repaso_v2/app/src/main/res/layout/lista.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Recuperacion/Ejercicio16_Repaso_v2/app/src/main/res/menu/menu_contextual.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Recuperacion/Ejercicio16_Repaso_v2/app/src/main/res/values/arrays.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Recuperacion/Ejercicio16_Repaso_v2/app/src/main/res/values/colors.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../EjercicioRepaso/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../EjercicioRepaso/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../Examen1/2023_DiegoRibasGonzalez/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Examen1/2023_DiegoRibasGonzalez/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ProyectoPreExamen-SinActualizarIDE/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ProyectoPreExamen-SinActualizarIDE/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ProyectoPreExamen-SinActualizarIDE/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ProyectoPreExamen-SinActualizarIDE/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ProyectoPreExamen-SinActualizarIDE/app/src/main/res/layout/lists_activity.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ProyectoPreExamen-SinActualizarIDE/app/src/main/res/layout/lists_activity.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\a18diegorg\.android\avd\Pixel_3a_API_23.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\diego\.android\avd\Pixel_3a_API_23.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -95,7 +105,7 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/a18diegorg/Documents/GitHub/MultimediaMobileDeviceProgramming/9. Preferencias Compartidas/Practica/E06_BDOperacionesBasicas_v2"
+    "last_opened_file_path": "C:/Users/diego/OneDrive/Documentos/GitHub/MultimediaMobileDeviceProgramming/9. Preferencias Compartidas/Practica/E06_BDOperacionesBasicas_v2"
   }
 }]]></component>
   <component name="RecentsManager">
