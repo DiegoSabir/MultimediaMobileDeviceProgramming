@@ -37,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
                 String nombre = etNombre.getText().toString().trim();
                 String email = dbh.buscarEmailPorNombre(nombre);
                 if (email != null) {
-                    tvEmail.setText("Email encontrado: " + email);
+                    tvEmail.setText("Email: " + email);
                 }
                 else {
-                    tvEmail.setText("No se encontró ningún email para ese nombre.");
+                    tvEmail.setText("ERROR: NO EXISTE EL USUARIO");
                 }
             }
         });

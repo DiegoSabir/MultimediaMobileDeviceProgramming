@@ -45,7 +45,7 @@ public class AdaptadorTotalPais extends ArrayAdapter<Eurovision> {
 
         Eurovision resultado = listaResultados.get(position);
         viewHolder.tvPais.setText(resultado.getPais());
-        viewHolder.tvTotalVotos.setText(String.valueOf(resultado.getVotosJurado()+resultado.getVotosAudiencia()));
+        viewHolder.tvTotalVotos.setText(String.valueOf(resultado.getVotosJurado() + resultado.getVotosAudiencia()));
 
         return convertView;
     }
