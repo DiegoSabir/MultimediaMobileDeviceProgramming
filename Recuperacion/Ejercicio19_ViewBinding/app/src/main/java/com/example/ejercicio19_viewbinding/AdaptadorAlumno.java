@@ -29,7 +29,8 @@ public class AdaptadorAlumno extends ArrayAdapter<Alumno> {
             binding = ListaBinding.inflate(inflater, parent, false); // Inflar el diseño con ViewBinding
             convertView = binding.getRoot();
             convertView.setTag(binding);
-        } else {
+        }
+        else {
             binding = (ListaBinding) convertView.getTag();
         }
 
@@ -38,9 +39,7 @@ public class AdaptadorAlumno extends ArrayAdapter<Alumno> {
             binding.tvNombreAlumno.setText(alumno.getNombre().toUpperCase());
             binding.tvCurso.setText(alumno.getCurso());
             binding.tvCiclo.setText(alumno.getCiclo());
-            // Resto del código
         }
-
         return convertView;
     }
 }
