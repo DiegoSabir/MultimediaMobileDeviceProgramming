@@ -21,6 +21,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private LinearLayout llCiclos;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         createAdapter();
         clickListenerLv();
         registerForContextMenu(lvAlumnos);
+        cargarAlumnos();
     }
 
     private void inicializarViews() {
@@ -189,14 +191,20 @@ public class MainActivity extends AppCompatActivity {
         nombre = etNombreApellidos.getText().toString();
         Alumno alumno = new Alumno(nombre, curso, ciclo);
 
-        // Guardar el alumno en la base de datos
         bbdd.agregarAlumno(alumno);
 
-        // Agregar el alumno a la lista y actualizar la interfaz de usuario
         arrayAlumnos.add(alumno);
         adaptador.notifyDataSetChanged();
 
         etNombreApellidos.setText("");
+    }
+
+    private void cargarAlumnos() {
+        List<Alumno> alumnosFromDB = bbdd.getAllAlumnos();
+
+        arrayAlumnos.addAll(alumnosFromDB);
+
+        adaptador.notifyDataSetChanged();
     }
 
     private boolean comprobarEdit() {
@@ -223,6 +231,4 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .show();
     }
-
-
 }
