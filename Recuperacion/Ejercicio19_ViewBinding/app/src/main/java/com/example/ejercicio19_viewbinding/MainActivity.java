@@ -9,14 +9,14 @@ import com.example.ejercicio19_viewbinding.databinding.ActivityMainBinding;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private ActivityMainBinding binding; // Declarar la variable para el objeto de ViewBinding
+    private ActivityMainBinding binding;
     private AdaptadorAlumno adaptador;
     private ArrayList<Alumno> arrayAlumnos = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater()); // Inflar el diseño con ViewBinding
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
         createAdapter();
